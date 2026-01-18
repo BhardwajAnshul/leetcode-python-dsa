@@ -1,0 +1,3786 @@
+<html lang="en"><head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>LeetCode Submissions</title>
+            <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/TheShubham99/leetcode-to-pdf/main/logo.png">
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f0f0f0;
+                    color: #333;
+                    padding: 20px;
+                    print-color-adjust: exact; 
+                }
+                .header {
+                    background-color: #f8f9fa;
+                    padding: 20px;
+                    text-align: center;
+                    margin-bottom: 20px;
+                    height:
+                }
+                .header h1 {
+                    color: #007bff;
+                    margin: 0;
+                }
+                .header-buttons {
+                    margin-top: 10px;
+                }
+                .button {
+                    background-color: #007bff;
+                    color: #fff;
+                    border: none;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    display: inline-block;
+                    margin-right: 10px;
+                    transition: background-color 0.3s ease;
+                }
+                .button:hover {
+                    background-color: #0056b3;
+                }
+                .question {
+                    margin-bottom: 40px;
+                    border: 1px solid #ccc;
+                    padding: 20px;
+                    background-color: #fff;
+                }
+                .title {
+                    font-size: 24px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    color: #333;
+                }
+                .language {
+                    font-style: italic;
+                    color: #666;
+                    margin-bottom: 10px;
+                }
+                .description {
+                    margin-bottom: 20px;
+                }
+                .solution {
+                    margin-top: 20px;
+                }
+                .solution-status {
+                    color: green;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+                pre {
+                    padding: 2rem;
+                    border: 1px grey solid;
+                    padding: 10px;
+                    border-radius: 4px;
+                    overflow-x: auto;
+                }
+                .keyword{
+                    color: #0e77ae;
+                }
+                .comment{
+                    color: green;    
+                }
+            </style>
+        <script src="chrome-extension://pgojnojmmhpofjgdmaebadhbocahppod/assets/aW5qZWN0X2hhc2g/aW5qZWN0X2hhc2g-a.js"></script><style>
+            .flipX video::-webkit-media-text-track-display {
+                transform: matrix(-1, 0, 0, 1, 0, 0) !important;
+            }
+            .flipXY video::-webkit-media-text-track-display {
+                transform: matrix(-1, 0, 0, -1, 0, 0) !important;
+            }
+            .flipXYX video::-webkit-media-text-track-display {
+                transform: matrix(1, 0, 0, -1, 0, 0) !important;
+            }</style><style>
+            @keyframes blinkWarning {
+                0% { color: red; }
+                100% { color: white; }
+            }
+            @-webkit-keyframes blinkWarning {
+                0% { color: red; }
+                100% { color: white; }
+            }
+            .blinkWarning {
+                -webkit-animation: blinkWarning 1s linear infinite;
+                -moz-animation: blinkWarning 1s linear infinite;
+                animation: blinkWarning 1s linear infinite;
+            }</style></head>
+        <body>
+            <div class="header">
+                <h1>My LeetCode Submissions</h1>
+                
+            </div>
+    
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/two-sum/description" target="_blank" style="color:'black'"><b>1 Two Sum</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given an array of integers <code>nums</code>&nbsp;and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
+
+<p>You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.</p>
+
+<p>You can return the answer in any order.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums = [2,7,11,15], target = 9
+<strong>Output:</strong> [0,1]
+<strong>Explanation:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums = [3,2,4], target = 6
+<strong>Output:</strong> [1,2]
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> nums = [3,3], target = 6
+<strong>Output:</strong> [0,1]
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+	<li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
+	<li><strong>Only one valid answer exists.</strong></li>
+</ul>
+
+<p>&nbsp;</p>
+<strong>Follow-up:&nbsp;</strong>Can you come up with an algorithm that is less than <code>O(n<sup>2</sup>)</code><font face="monospace">&nbsp;</font>time complexity?
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> twoSum(self, nums: List[int], target: int) -&gt; List[int]:
+        nums2 = sorted(nums)
+
+        <span class="keyword">def</span> get_ab(nums2):
+            w = len(nums2)
+            <span class="keyword">for</span> i, a <span class="keyword">in</span> enumerate(nums2):
+                <span class="keyword">for</span> j <span class="keyword">in</span> range(i+1, w):
+                    b = nums2[j]
+                    <span class="keyword">if</span> a + b == target:
+                        <span class="keyword">return</span> a, b
+
+        
+
+        a, b = get_ab(nums2)
+        result = []
+        <span class="keyword">for</span> index, i <span class="keyword">in</span> enumerate(nums):
+            <span class="keyword">if</span> i <span class="keyword">in</span> [a, b]:
+                result.append(index)
+
+        <span class="keyword">return</span> result
+
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/add-two-numbers/description" target="_blank" style="color:'black'"><b>2 Add Two Numbers</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are given two <strong>non-empty</strong> linked lists representing two non-negative integers. The digits are stored in <strong>reverse order</strong>, and each of their nodes contains a single digit. Add the two numbers and return the sum&nbsp;as a linked list.</p>
+
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/02/addtwonumber1.jpg" style="width: 483px; height: 342px;">
+<pre><strong>Input:</strong> l1 = [2,4,3], l2 = [5,6,4]
+<strong>Output:</strong> [7,0,8]
+<strong>Explanation:</strong> 342 + 465 = 807.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> l1 = [0], l2 = [0]
+<strong>Output:</strong> [0]
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
+<strong>Output:</strong> [8,9,9,9,0,0,0,1]
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in each linked list is in the range <code>[1, 100]</code>.</li>
+	<li><code>0 &lt;= Node.val &lt;= 9</code></li>
+	<li>It is guaranteed that the list represents a number that does not have leading zeros.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code>
+
+<span class="comment"># class ListNode:</span>
+<span class="comment">#     def __init__(self, val=0, next=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.next = next</span>
+
+<span class="keyword">class</span> Solution:
+<span class="comment">    # Definition for singly-linked list.</span>
+    <span class="keyword">def</span> list_to_linked_list(self, arr):
+        <span class="keyword">if</span> not arr:
+            <span class="keyword">return</span> None
+
+        head = ListNode(arr[0])
+        current = head
+
+        <span class="keyword">for</span> value <span class="keyword">in</span> arr[1:]:
+            current.next = ListNode(value)
+            current = current.next
+
+        <span class="keyword">return</span> head
+    <span class="keyword">def</span> addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -&gt; Optional[ListNode]:
+        x = 0
+
+        curr = l1.val
+        lx = []
+        <span class="keyword">while</span> True:
+            lx.append(l1.val)
+            l1 = l1.next
+            <span class="keyword">if</span> not l1:
+                break
+    
+            
+
+        ly = []
+        <span class="keyword">while</span> True:
+            ly.append(l2.val)
+            l2 = l2.next
+            <span class="keyword">if</span> not l2:
+                break
+
+        lxr = lx[::-1]
+        lyr = ly[::-1]
+
+        lxr = int("".join([str(a) <span class="keyword">for</span> a <span class="keyword">in</span> lxr]))
+        lyr = int("".join([str(y) <span class="keyword">for</span> y <span class="keyword">in</span> lyr]))
+
+        sumxy = lxr + lyr
+
+        f =[]
+
+        <span class="keyword">while</span>(sumxy):
+            f.append(sumxy%10)
+            sumxy = sumxy//10
+
+        print(f)
+
+
+    
+
+        <span class="keyword">if</span> not f:
+            <span class="keyword">return</span> ListNode(val=0)
+
+        fr = ListNode(val=f[0])
+
+        curr = fr
+
+        <span class="keyword">for</span> x <span class="keyword">in</span> f[1:]:
+            curr.next = ListNode(val=x)
+<span class="comment">            # curr.val = x</span>
+            curr = curr.next
+
+        <span class="keyword">return</span> fr
+
+
+
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/merge-two-sorted-lists/description" target="_blank" style="color:'black'"><b>21 Merge Two Sorted Lists</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are given the heads of two sorted linked lists <code>list1</code> and <code>list2</code>.</p>
+
+<p>Merge the two lists into one <strong>sorted</strong> list. The list should be made by splicing together the nodes of the first two lists.</p>
+
+<p>Return <em>the head of the merged linked list</em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg" style="width: 662px; height: 302px;">
+<pre><strong>Input:</strong> list1 = [1,2,4], list2 = [1,3,4]
+<strong>Output:</strong> [1,1,2,3,4,4]
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> list1 = [], list2 = []
+<strong>Output:</strong> []
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> list1 = [], list2 = [0]
+<strong>Output:</strong> [0]
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in both lists is in the range <code>[0, 50]</code>.</li>
+	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+	<li>Both <code>list1</code> and <code>list2</code> are sorted in <strong>non-decreasing</strong> order.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for singly-linked list.</span>
+<span class="comment"># class ListNode:</span>
+<span class="comment">#     def __init__(self, val=0, next=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.next = next</span>
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -&gt; Optional[ListNode]:
+        ret = ListNode()
+        curr = ret
+        <span class="keyword">while</span> True:
+            <span class="keyword">if</span> list1 == None:
+                curr.next = list2
+                break
+            <span class="keyword">elif</span> list2 == None:
+                curr.next = list1
+                break
+            <span class="keyword">else</span>:
+                h1 = list1.val
+                h2 = list2.val
+<span class="comment">                # print(h1, h2)</span>
+                <span class="keyword">if</span> h1 &lt; h2:
+                    curr.next = ListNode(h1)
+                    list1 = list1.next
+                <span class="keyword">else</span>:
+                    curr.next = ListNode(h2)
+                    list2 = list2.next
+                curr = curr.next
+<span class="comment">                # print(curr.val)</span>
+<span class="comment">            # curr.next = ListNode()</span>
+            
+
+        <span class="keyword">return</span> ret.next
+ 
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/description" target="_blank" style="color:'black'"><b>26 Remove Duplicates from Sorted Array</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing order</strong>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> such that each unique element appears only <strong>once</strong>. The <strong>relative order</strong> of the elements should be kept the <strong>same</strong>.</p>
+
+<p>Consider the number of <em>unique elements</em> in&nbsp;<code>nums</code> to be <code>k<strong>​​​​​​​</strong></code>​​​​​​​. <meta charset="UTF-8">After removing duplicates, return the number of unique elements&nbsp;<code>k</code>.</p>
+
+<p><meta charset="UTF-8">The first&nbsp;<code>k</code>&nbsp;elements of&nbsp;<code>nums</code>&nbsp;should contain the unique numbers in <strong>sorted order</strong>. The remaining elements beyond index&nbsp;<code>k - 1</code>&nbsp;can be ignored.</p>
+
+<p><strong>Custom Judge:</strong></p>
+
+<p>The judge will test your solution with the following code:</p>
+
+<pre>int[] nums = [...]; // Input array
+int[] expectedNums = [...]; // The expected answer with correct length
+
+int k = removeDuplicates(nums); // Calls your implementation
+
+assert k == expectedNums.length;
+for (int i = 0; i &lt; k; i++) {
+    assert nums[i] == expectedNums[i];
+}
+</pre>
+
+<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums = [1,1,2]
+<strong>Output:</strong> 2, nums = [1,2,_]
+<strong>Explanation:</strong> Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums = [0,0,1,1,1,2,2,3,3,4]
+<strong>Output:</strong> 5, nums = [0,1,2,3,4,_,_,_,_,_]
+<strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
+	<li><code>-100 &lt;= nums[i] &lt;= 100</code></li>
+	<li><code>nums</code> is sorted in <strong>non-decreasing</strong> order.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> removeDuplicates(self, nums: List[int]) -&gt; int:
+
+        start_index  = 0
+        start_value = None
+        <span class="keyword">for</span> (index, value) <span class="keyword">in</span> enumerate(nums):
+            <span class="keyword">if</span> value != start_value:
+                nums[start_index] = value
+                start_value = value
+                start_index+=1
+
+        <span class="keyword">return</span> start_index
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/min-cost-climbing-stairs/description" target="_blank" style="color:'black'"><b>747 Min Cost Climbing Stairs</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are given an integer array <code>cost</code> where <code>cost[i]</code> is the cost of <code>i<sup>th</sup></code> step on a staircase. Once you pay the cost, you can either climb one or two steps.</p>
+
+<p>You can either start from the step with index <code>0</code>, or the step with index <code>1</code>.</p>
+
+<p>Return <em>the minimum cost to reach the top of the floor</em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> cost = [10,<u>15</u>,20]
+<strong>Output:</strong> 15
+<strong>Explanation:</strong> You will start at index 1.
+- Pay 15 and climb two steps to reach the top.
+The total cost is 15.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> cost = [<u>1</u>,100,<u>1</u>,1,<u>1</u>,100,<u>1</u>,<u>1</u>,100,<u>1</u>]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> You will start at index 0.
+- Pay 1 and climb two steps to reach index 2.
+- Pay 1 and climb two steps to reach index 4.
+- Pay 1 and climb two steps to reach index 6.
+- Pay 1 and climb one step to reach index 7.
+- Pay 1 and climb two steps to reach index 9.
+- Pay 1 and climb one step to reach the top.
+The total cost is 6.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>2 &lt;= cost.length &lt;= 1000</code></li>
+	<li><code>0 &lt;= cost[i] &lt;= 999</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># class Solution:</span>
+<span class="comment">#     def minCostClimbingStairs(self, cost: List[int]) -&gt; int:</span>
+
+
+<span class="comment">#         @lru_cache(None)</span>
+<span class="comment">#         def total_cost(i):</span>
+
+<span class="comment">#             if i-2 &lt; 0:</span>
+<span class="comment">#                 return 0</span>
+<span class="comment">#             else:</span>
+<span class="comment">#                 return min(</span>
+<span class="comment">#                 total_cost(i-1)+cost[i-1],</span>
+<span class="comment">#                 total_cost(i-2) + cost[i-2]</span>
+<span class="comment">#                 )</span>
+
+<span class="comment">#         total_len = len(cost)</span>
+
+<span class="comment">#         return total_cost(total_len)</span>
+
+
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> minCostClimbingStairs(self, cost: List[int]) -&gt; int:
+        prev2 = prev1 = 0
+
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(2, len(cost) + 1):
+            curr = min(
+                prev1 + cost[i - 1],
+                prev2 + cost[i - 2]
+            )
+            prev2, prev1 = prev1, curr
+
+        <span class="keyword">return</span> prev1
+
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/minimum-path-sum/description" target="_blank" style="color:'black'"><b>64 Minimum Path Sum</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given a <code>m x n</code> <code>grid</code> filled with non-negative numbers, find a path from top left to bottom right, which minimizes the sum of all numbers along its path.</p>
+
+<p><strong>Note:</strong> You can only move either down or right at any point in time.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/11/05/minpath.jpg" style="width: 242px; height: 242px;">
+<pre><strong>Input:</strong> grid = [[1,3,1],[1,5,1],[4,2,1]]
+<strong>Output:</strong> 7
+<strong>Explanation:</strong> Because the path 1 → 3 → 1 → 1 → 1 minimizes the sum.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> grid = [[1,2,3],[4,5,6]]
+<strong>Output:</strong> 12
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>m == grid.length</code></li>
+	<li><code>n == grid[i].length</code></li>
+	<li><code>1 &lt;= m, n &lt;= 200</code></li>
+	<li><code>0 &lt;= grid[i][j] &lt;= 200</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># class Solution:</span>
+<span class="comment">#     def minPathSum(self, grid: List[List[int]]) -&gt; int:</span>
+
+<span class="comment">#         leny = len(grid)</span>
+<span class="comment">#         lenx = len(grid[0])</span>
+                
+<span class="comment">#         @lru_cache(None)</span>
+<span class="comment">#         def total_cost(i, j):</span>
+<span class="comment">#             if i== 0 and j == 0:</span>
+<span class="comment">#                 return 0</span>
+<span class="comment">#             elif i == 0:</span>
+<span class="comment">#                 return total_cost(i, j-1) + grid[j-1][i]</span>
+<span class="comment">#             elif j == 0:</span>
+<span class="comment">#                 return total_cost(i-1, j) + grid[j][i-1]</span>
+<span class="comment">#             else:</span>
+<span class="comment">#                 return min(</span>
+<span class="comment">#                     total_cost(i-1, j) + grid[j][i-1],</span>
+<span class="comment">#                     total_cost(i, j-1) + grid[j-1][i]</span>
+<span class="comment">#                 )</span>
+
+<span class="comment">#         return total_cost(lenx-1, leny-1) + grid[leny-1][lenx-1]</span>
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> minPathSum(self, grid: List[List[int]]) -&gt; int:
+        m, n = len(grid), len(grid[0])
+
+        dp = [[0] * n <span class="keyword">for</span> _ <span class="keyword">in</span> range(m)]
+        dp[0][0] = grid[0][0]
+
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(1, m):
+            dp[i][0] = dp[i-1][0] + grid[i][0]
+
+        <span class="keyword">for</span> j <span class="keyword">in</span> range(1, n):
+            dp[0][j] = dp[0][j-1] + grid[0][j]
+
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(1, m):
+            <span class="keyword">for</span> j <span class="keyword">in</span> range(1, n):
+                dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]
+
+        <span class="keyword">return</span> dp[m-1][n-1]
+
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/removing-stars-from-a-string/description" target="_blank" style="color:'black'"><b>2470 Removing Stars From a String</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are given a string <code>s</code>, which contains stars <code>*</code>.</p>
+
+<p>In one operation, you can:</p>
+
+<ul>
+	<li>Choose a star in <code>s</code>.</li>
+	<li>Remove the closest <strong>non-star</strong> character to its <strong>left</strong>, as well as remove the star itself.</li>
+</ul>
+
+<p>Return <em>the string after <strong>all</strong> stars have been removed</em>.</p>
+
+<p><strong>Note:</strong></p>
+
+<ul>
+	<li>The input will be generated such that the operation is always possible.</li>
+	<li>It can be shown that the resulting string will always be unique.</li>
+</ul>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> s = "leet**cod*e"
+<strong>Output:</strong> "lecoe"
+<strong>Explanation:</strong> Performing the removals from left to right:
+- The closest character to the 1<sup>st</sup> star is 't' in "lee<strong><u>t</u></strong>**cod*e". s becomes "lee*cod*e".
+- The closest character to the 2<sup>nd</sup> star is 'e' in "le<strong><u>e</u></strong>*cod*e". s becomes "lecod*e".
+- The closest character to the 3<sup>rd</sup> star is 'd' in "leco<strong><u>d</u></strong>*e". s becomes "lecoe".
+There are no more stars, so we return "lecoe".</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> s = "erase*****"
+<strong>Output:</strong> ""
+<strong>Explanation:</strong> The entire string is removed, so we return an empty string.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+	<li><code>s</code> consists of lowercase English letters and stars <code>*</code>.</li>
+	<li>The operation above can be performed on <code>s</code>.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># class Solution:</span>
+<span class="comment">#     def removeStars(self, s: str) -&gt; str:</span>
+
+<span class="comment">#         f = ''</span>
+<span class="comment">#         residue = 0</span>
+<span class="comment">#         for x in s[::-1]:</span>
+
+<span class="comment">#             if x!='*':</span>
+<span class="comment">#                 if residue == 0:</span>
+<span class="comment">#                     f = f+x</span>
+<span class="comment">#                 else:</span>
+<span class="comment">#                     residue-=1</span>
+
+<span class="comment">#             else:</span>
+<span class="comment">#                 residue +=1</span>
+
+<span class="comment">#         return f[::-1]</span>
+            
+
+            
+
+        
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> removeStars(self, s: str) -&gt; str:
+
+        f = []
+
+        <span class="keyword">for</span> x <span class="keyword">in</span> s:
+
+            <span class="keyword">if</span> x == '*':
+                f.pop()
+            <span class="keyword">else</span>:
+                f.append(x)
+
+        <span class="keyword">return</span> ''.join(f)
+
+        <span class="keyword">return</span> f
+            
+
+            
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/asteroid-collision/description" target="_blank" style="color:'black'"><b>735 Asteroid Collision</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>We are given an array <code>asteroids</code> of integers representing asteroids in a row. The indices of the asteroid in the array represent their relative position in space.</p>
+
+<p>For each asteroid, the absolute value represents its size, and the sign represents its direction (positive meaning right, negative meaning left). Each asteroid moves at the same speed.</p>
+
+<p>Find out the state of the asteroids after all collisions. If two asteroids meet, the smaller one will explode. If both are the same size, both will explode. Two asteroids moving in the same direction will never meet.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> asteroids = [5,10,-5]
+<strong>Output:</strong> [5,10]
+<strong>Explanation:</strong> The 10 and -5 collide resulting in 10. The 5 and 10 never collide.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> asteroids = [8,-8]
+<strong>Output:</strong> []
+<strong>Explanation:</strong> The 8 and -8 collide exploding each other.
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> asteroids = [10,2,-5]
+<strong>Output:</strong> [10]
+<strong>Explanation:</strong> The 2 and -5 collide resulting in -5. The 10 and -5 collide resulting in 10.
+</pre>
+
+<p><strong class="example">Example 4:</strong></p>
+
+<pre><strong>Input:</strong> asteroids = [3,5,-6,2,-1,4]​​​​​​​
+<strong>Output:</strong> [-6,2,4]
+<strong>Explanation:</strong> The asteroid -6 makes the asteroid 3 and 5 explode, and then continues going left. On the other side, the asteroid 2 makes the asteroid -1 explode and then continues going right, without reaching asteroid 4.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>2 &lt;= asteroids.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>-1000 &lt;= asteroids[i] &lt;= 1000</code></li>
+	<li><code>asteroids[i] != 0</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> asteroidCollision(self, asteroids: List[int]) -&gt; List[int]:
+        break_loop = False
+        current = asteroids
+        <span class="keyword">while</span> not break_loop:
+            break_loop = True
+            f = [current[0]]
+
+            <span class="keyword">for</span> x <span class="keyword">in</span> current[1:]:
+
+                <span class="keyword">if</span> x &gt; 0:
+                    f.append(x)
+                <span class="keyword">else</span>:
+                    <span class="keyword">if</span> not f:
+                        f.append(x)
+                    <span class="keyword">elif</span> abs(x) == f[-1] :
+                        f.pop()
+                    <span class="keyword">elif</span> abs(x) &gt; f[-1] and f[-1]&gt; 0:
+                        break_loop = False
+                        f[-1] = x
+                    <span class="keyword">elif</span> f[-1] &lt; 0:
+                        f.append(x)
+            current = f
+        
+        <span class="keyword">return</span> current
+
+
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/invert-binary-tree/description" target="_blank" style="color:'black'"><b>226 Invert Binary Tree</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given the <code>root</code> of a binary tree, invert the tree, and return <em>its root</em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/14/invert1-tree.jpg" style="width: 500px; height: 165px;">
+<pre><strong>Input:</strong> root = [4,2,7,1,3,6,9]
+<strong>Output:</strong> [4,7,2,9,6,3,1]
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/14/invert2-tree.jpg" style="width: 500px; height: 120px;">
+<pre><strong>Input:</strong> root = [2,1,3]
+<strong>Output:</strong> [2,3,1]
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> root = []
+<strong>Output:</strong> []
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[0, 100]</code>.</li>
+	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.left = left</span>
+<span class="comment">#         self.right = right</span>
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> invertTree(self, root: Optional[TreeNode]) -&gt; Optional[TreeNode]:
+
+
+        <span class="keyword">def</span> invert_node(node):
+            <span class="keyword">if</span> not node:
+                <span class="keyword">return</span> node
+            node.left, node.right = invert_node(node.right), invert_node(node.left)
+            <span class="keyword">return</span> node
+
+        <span class="keyword">return</span> invert_node(root)
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/description" target="_blank" style="color:'black'"><b>104 Maximum Depth of Binary Tree</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given the <code>root</code> of a binary tree, return <em>its maximum depth</em>.</p>
+
+<p>A binary tree's <strong>maximum depth</strong>&nbsp;is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/11/26/tmp-tree.jpg" style="width: 400px; height: 277px;">
+<pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]
+<strong>Output:</strong> 3
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> root = [1,null,2]
+<strong>Output:</strong> 2
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[0, 10<sup>4</sup>]</code>.</li>
+	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.left = left</span>
+<span class="comment">#         self.right = right</span>
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> maxDepth(self, root: Optional[TreeNode]) -&gt; int:
+
+        <span class="keyword">def</span> depth(root):
+            <span class="keyword">if</span> not root:
+                <span class="keyword">return</span> 0
+
+            max_left = depth(root.left) 
+
+            max_right = depth(root.right)
+
+            <span class="keyword">return</span> max(max_left, max_right) + 1
+
+        <span class="keyword">return</span> depth(root)
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/balanced-binary-tree/description" target="_blank" style="color:'black'"><b>110 Balanced Binary Tree</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given a binary tree, determine if it is <span data-keyword="height-balanced"><strong>height-balanced</strong></span>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/06/balance_1.jpg" style="width: 342px; height: 221px;">
+<pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]
+<strong>Output:</strong> true
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/06/balance_2.jpg" style="width: 452px; height: 301px;">
+<pre><strong>Input:</strong> root = [1,2,2,3,3,null,null,4,4]
+<strong>Output:</strong> false
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> root = []
+<strong>Output:</strong> true
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[0, 5000]</code>.</li>
+	<li><code>-10<sup>4</sup> &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.left = left</span>
+<span class="comment">#         self.right = right</span>
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> isBalanced(self, root: Optional[TreeNode]) -&gt; bool:
+
+        <span class="keyword">def</span> depth(node):
+            <span class="keyword">if</span> not node:
+                <span class="keyword">return</span> 0
+            
+            <span class="keyword">return</span> max(depth(node.left), depth(node.right))+1
+
+        <span class="keyword">def</span> isBalance(node):
+            <span class="keyword">if</span> not node:
+                <span class="keyword">return</span> True
+                
+            length_r = depth(node.right)
+            length_l = depth(node.left)
+
+            diff = length_r - length_l
+
+            <span class="keyword">if</span> abs(diff) &lt;= 1:
+                balance = True
+            <span class="keyword">else</span>:
+                balance = False
+
+            <span class="keyword">return</span> balance and isBalance(node.left) and isBalance(node.right)
+
+        <span class="keyword">return</span> isBalance(root)
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/diameter-of-binary-tree/description" target="_blank" style="color:'black'"><b>543 Diameter of Binary Tree</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given the <code>root</code> of a binary tree, return <em>the length of the <strong>diameter</strong> of the tree</em>.</p>
+
+<p>The <strong>diameter</strong> of a binary tree is the <strong>length</strong> of the longest path between any two nodes in a tree. This path may or may not pass through the <code>root</code>.</p>
+
+<p>The <strong>length</strong> of a path between two nodes is represented by the number of edges between them.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/06/diamtree.jpg" style="width: 292px; height: 302px;">
+<pre><strong>Input:</strong> root = [1,2,3,4,5]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> 3 is the length of the path [4,2,1,3] or [5,2,1,3].
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> root = [1,2]
+<strong>Output:</strong> 1
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[1, 10<sup>4</sup>]</code>.</li>
+	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.left = left</span>
+<span class="comment">#         self.right = right</span>
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> diameterOfBinaryTree(self, root: Optional[TreeNode]) -&gt; int:
+
+        <span class="keyword">def</span> depth(node):
+            <span class="keyword">if</span> not node:
+                <span class="keyword">return</span> 0
+            <span class="keyword">else</span>:
+                <span class="keyword">return</span> max(depth(node.left), depth(node.right)) + 1
+
+        <span class="keyword">def</span> dia(root):
+            <span class="keyword">if</span> not root:
+                <span class="keyword">return</span> 0
+
+            <span class="keyword">return</span> max( [dia(root.left), dia(root.right), depth(root.left) +depth(root.right) + 1])
+
+        <span class="keyword">return</span> dia(root)-1
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/subtree-of-another-tree/description" target="_blank" style="color:'black'"><b>572 Subtree of Another Tree</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given the roots of two binary trees <code>root</code> and <code>subRoot</code>, return <code>true</code> if there is a subtree of <code>root</code> with the same structure and node values of<code> subRoot</code> and <code>false</code> otherwise.</p>
+
+<p>A subtree of a binary tree <code>tree</code> is a tree that consists of a node in <code>tree</code> and all of this node's descendants. The tree <code>tree</code> could also be considered as a subtree of itself.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/04/28/subtree1-tree.jpg" style="width: 532px; height: 400px;">
+<pre><strong>Input:</strong> root = [3,4,5,1,2], subRoot = [4,1,2]
+<strong>Output:</strong> true
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/04/28/subtree2-tree.jpg" style="width: 502px; height: 458px;">
+<pre><strong>Input:</strong> root = [3,4,5,1,2,null,null,null,null,0], subRoot = [4,1,2]
+<strong>Output:</strong> false
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the <code>root</code> tree is in the range <code>[1, 2000]</code>.</li>
+	<li>The number of nodes in the <code>subRoot</code> tree is in the range <code>[1, 1000]</code>.</li>
+	<li><code>-10<sup>4</sup> &lt;= root.val &lt;= 10<sup>4</sup></code></li>
+	<li><code>-10<sup>4</sup> &lt;= subRoot.val &lt;= 10<sup>4</sup></code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># # Definition for a binary tree node.</span>
+<span class="comment"># # class TreeNode:</span>
+<span class="comment"># #     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment"># #         self.val = val</span>
+<span class="comment"># #         self.left = left</span>
+<span class="comment"># #         self.right = right</span>
+<span class="comment"># class Solution:</span>
+<span class="comment">#     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -&gt; bool:   </span>
+<span class="comment">#         # a = True</span>
+<span class="comment">#         def leaf_same(root, subRoot):</span>
+<span class="comment">#             a = True</span>
+<span class="comment">#             if subRoot == None and root== None:</span>
+<span class="comment">#                 return False</span>
+<span class="comment">#             elif (subRoot!=None and root ==None) or (subRoot==None and root !=None):</span>
+<span class="comment">#                 return True</span>
+<span class="comment">#             # elif subRoot == None:</span>
+<span class="comment">#             #     return True</span>
+<span class="comment">#             # elif root == None:</span>
+<span class="comment">#             #     return True</span>
+<span class="comment">#             elif subRoot.val == root.val:</span>
+<span class="comment">#                 print(3, subRoot.val , root.val)</span>
+<span class="comment">#                 return leaf_same(root.left, subRoot.left) and leaf_same(root.right, subRoot.right)</span>
+<span class="comment">#             else:</span>
+<span class="comment">#                 return leaf_same(root.left, subRoot) and leaf_same(root.right, subRoot)</span>
+
+<span class="comment">#         return  not leaf_same(root, subRoot)</span>
+        
+
+<span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.left = left</span>
+<span class="comment">#         self.right = right</span>
+<span class="comment"># class Solution:</span>
+<span class="comment">#     part = False</span>
+<span class="comment">#     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -&gt; bool:   </span>
+        
+
+<span class="comment">#         def isSame(a , b):</span>
+<span class="comment">#             if  not a and not b:</span>
+<span class="comment">#                 return 1</span>
+<span class="comment">#             elif (a and not b) or (not a and b):</span>
+<span class="comment">#                 return 0</span>
+<span class="comment">#             elif a.val != b.val:</span>
+<span class="comment">#                 return 0</span>
+<span class="comment">#             else:</span>
+<span class="comment">#                 return isSame(a.left, b.left) and isSame(a.right, b.right)</span>
+
+
+<span class="comment">#         def leaf_same(root, subRoot):</span>
+<span class="comment">#             if self.part:</span>
+<span class="comment">#                 return</span>
+<span class="comment">#             elif root  and isSame(root, subRoot):</span>
+<span class="comment">#                 self.part = True</span>
+            
+<span class="comment">#             elif root:</span>
+<span class="comment">#                 leaf_same(root.left, subRoot) </span>
+<span class="comment">#                 leaf_same(root.right, subRoot) </span>
+
+<span class="comment">#         leaf_same(root, subRoot)</span>
+<span class="comment">#         return  self.part</span>
+
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> isSubtree(self, root, subRoot):
+        <span class="keyword">def</span> hash_tree(node, store):
+            <span class="keyword">if</span> not node:
+                <span class="keyword">return</span> None
+
+            left = hash_tree(node.left, store)
+            right = hash_tree(node.right, store)
+
+            h = (node.val, left, right)
+            store.add(h)
+            <span class="keyword">return</span> h
+
+        root_hashes = set()
+        hash_tree(root, root_hashes)
+
+        sub_hash = hash_tree(subRoot, set())
+        <span class="keyword">return</span> sub_hash <span class="keyword">in</span> root_hashes
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description" target="_blank" style="color:'black'"><b>235 Lowest Common Ancestor of a Binary Search Tree</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.</p>
+
+<p>According to the <a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor" target="_blank">definition of LCA on Wikipedia</a>: “The lowest common ancestor is defined between two nodes <code>p</code> and <code>q</code> as the lowest node in <code>T</code> that has both <code>p</code> and <code>q</code> as descendants (where we allow <strong>a node to be a descendant of itself</strong>).”</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/14/binarysearchtree_improved.png" style="width: 200px; height: 190px;">
+<pre><strong>Input:</strong> root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> The LCA of nodes 2 and 8 is 6.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/14/binarysearchtree_improved.png" style="width: 200px; height: 190px;">
+<pre><strong>Input:</strong> root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> root = [2,1], p = 2, q = 1
+<strong>Output:</strong> 2
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[2, 10<sup>5</sup>]</code>.</li>
+	<li><code>-10<sup>9</sup> &lt;= Node.val &lt;= 10<sup>9</sup></code></li>
+	<li>All <code>Node.val</code> are <strong>unique</strong>.</li>
+	<li><code>p != q</code></li>
+	<li><code>p</code> and <code>q</code> will exist in the BST.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, x):</span>
+<span class="comment">#         self.val = x</span>
+<span class="comment">#         self.left = None</span>
+<span class="comment">#         self.right = None</span>
+
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -&gt; 'TreeNode':
+        @lru_cache(None)
+        <span class="keyword">def</span> isInTree(root, node):
+
+            <span class="keyword">if</span> not root:
+                <span class="keyword">return</span> False
+            val = root.val
+            <span class="keyword">if</span>  val==node:
+                <span class="keyword">return</span> True
+            <span class="keyword">elif</span> val &gt; node:
+                <span class="keyword">return</span> isInTree(root.left, node)
+            <span class="keyword">else</span>:
+                <span class="keyword">return</span> isInTree(root.right, node)
+
+        <span class="keyword">def</span> isBothInTree(root, p, q):
+            <span class="keyword">if</span> isInTree(root, p) and isInTree(root, q):
+                <span class="keyword">return</span> True
+            <span class="keyword">else</span>:
+                <span class="keyword">return</span> False
+
+        
+
+        p1 = p.val
+        q1 = q.val
+        <span class="keyword">def</span> parent_node(root, p, q):
+
+            <span class="keyword">if</span> isBothInTree(root, p, q):
+                <span class="keyword">if</span> isBothInTree(root.right, p, q):
+                    <span class="keyword">return</span> parent_node(root.right, p, q)
+                <span class="keyword">elif</span> isBothInTree(root.left, p, q):
+                    <span class="keyword">return</span> parent_node(root.left, p, q)
+                <span class="keyword">else</span>:
+                    <span class="keyword">return</span> root.val
+
+        x = TreeNode(parent_node(root, p1, q1))
+        <span class="keyword">return</span> x
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/climbing-stairs/description" target="_blank" style="color:'black'"><b>70 Climbing Stairs</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are climbing a staircase. It takes <code>n</code> steps to reach the top.</p>
+
+<p>Each time you can either climb <code>1</code> or <code>2</code> steps. In how many distinct ways can you climb to the top?</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> n = 2
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> n = 3
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> There are three ways to climb to the top.
+1. 1 step + 1 step + 1 step
+2. 1 step + 2 steps
+3. 2 steps + 1 step
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= n &lt;= 45</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> climbStairs(self, n: int) -&gt; int:
+
+        @lru_cache(None)
+        <span class="keyword">def</span> step(n):
+            <span class="keyword">if</span> n == 1:
+                <span class="keyword">return</span> 1
+            <span class="keyword">elif</span> n == 2:
+                <span class="keyword">return</span> 2
+            <span class="keyword">else</span>:
+                <span class="keyword">return</span> step(n-2) + step(n-1)
+
+        <span class="keyword">return</span> step(n)
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/maximum-product-subarray/description" target="_blank" style="color:'black'"><b>152 Maximum Product Subarray</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given an integer array <code>nums</code>, find a <span data-keyword="subarray-nonempty">subarray</span> that has the largest product, and return <em>the product</em>.</p>
+
+<p>The test cases are generated so that the answer will fit in a <strong>32-bit</strong> integer.</p>
+
+<p><strong>Note</strong> that the product of an array with a single element is the value of that element.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums = [2,3,-2,4]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> [2,3] has the largest product 6.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums = [-2,0,-1]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> The result cannot be 2, because [-2,-1] is not a subarray.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 2 * 10<sup>4</sup></code></li>
+	<li><code>-10 &lt;= nums[i] &lt;= 10</code></li>
+	<li>The product of any subarray of <code>nums</code> is <strong>guaranteed</strong> to fit in a <strong>32-bit</strong> integer.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> maxProduct(self, nums: List[int]) -&gt; int:
+
+        products = [1]*len(nums)
+
+        <span class="keyword">def</span> maxProduct(nums):
+            curr = nums[0]
+            currs = []
+            currs.append(curr)
+            <span class="keyword">for</span> n <span class="keyword">in</span> nums[1:]:
+                curr, prev = n*curr, curr
+                currs.append(curr)
+
+            <span class="keyword">return</span> max(currs)
+        
+        prods = []
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):
+            prod = maxProduct(nums[i:])
+            prods.append(prod)
+
+        <span class="keyword">return</span> max(prods)
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/house-robber/description" target="_blank" style="color:'black'"><b>198 House Robber</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed, the only constraint stopping you from robbing each of them is that adjacent houses have security systems connected and <b>it will automatically contact the police if two adjacent houses were broken into on the same night</b>.</p>
+
+<p>Given an integer array <code>nums</code> representing the amount of money of each house, return <em>the maximum amount of money you can rob tonight <b>without alerting the police</b></em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums = [1,2,3,1]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> Rob house 1 (money = 1) and then rob house 3 (money = 3).
+Total amount you can rob = 1 + 3 = 4.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums = [2,7,9,3,1]
+<strong>Output:</strong> 12
+<strong>Explanation:</strong> Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
+Total amount you can rob = 2 + 9 + 1 = 12.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 100</code></li>
+	<li><code>0 &lt;= nums[i] &lt;= 400</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> rob(self, nums: List[int]) -&gt; int:
+
+        prev, curr = 0, 0
+
+        <span class="keyword">for</span> n <span class="keyword">in</span> nums:
+            prev, curr = curr, max(curr, prev+n)
+        
+        <span class="keyword">return</span> curr
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/house-robber-ii/description" target="_blank" style="color:'black'"><b>213 House Robber II</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are a professional robber planning to rob houses along a street. Each house has a certain amount of money stashed. All houses at this place are <strong>arranged in a circle.</strong> That means the first house is the neighbor of the last one. Meanwhile, adjacent houses have a security system connected, and&nbsp;<b>it will automatically contact the police if two adjacent houses were broken into on the same night</b>.</p>
+
+<p>Given an integer array <code>nums</code> representing the amount of money of each house, return <em>the maximum amount of money you can rob tonight <strong>without alerting the police</strong></em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums = [2,3,2]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> You cannot rob house 1 (money = 2) and then rob house 3 (money = 2), because they are adjacent houses.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums = [1,2,3,1]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> Rob house 1 (money = 1) and then rob house 3 (money = 3).
+Total amount you can rob = 1 + 3 = 4.
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> nums = [1,2,3]
+<strong>Output:</strong> 3
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 100</code></li>
+	<li><code>0 &lt;= nums[i] &lt;= 1000</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> rob(self, nums: List[int]) -&gt; int:
+
+        <span class="keyword">if</span> len(nums) == 1:
+            <span class="keyword">return</span> nums[0]
+
+        prev, curr = 0, 0 
+        <span class="keyword">for</span> n <span class="keyword">in</span> nums[0: -1]:
+            prev, curr = curr, max(curr, prev+n)
+        curr1 = curr
+        prev, curr = 0, 0 
+        <span class="keyword">for</span> n <span class="keyword">in</span> nums[1:]:
+            prev, curr = curr, max(curr, prev+n)
+        curr2 = curr
+
+        <span class="keyword">return</span> max(curr1, curr2)
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/coin-change/description" target="_blank" style="color:'black'"><b>322 Coin Change</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are given an integer array <code>coins</code> representing coins of different denominations and an integer <code>amount</code> representing a total amount of money.</p>
+
+<p>Return <em>the fewest number of coins that you need to make up that amount</em>. If that amount of money cannot be made up by any combination of the coins, return <code>-1</code>.</p>
+
+<p>You may assume that you have an infinite number of each kind of coin.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> coins = [1,2,5], amount = 11
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> 11 = 5 + 5 + 1
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> coins = [2], amount = 3
+<strong>Output:</strong> -1
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> coins = [1], amount = 0
+<strong>Output:</strong> 0
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= coins.length &lt;= 12</code></li>
+	<li><code>1 &lt;= coins[i] &lt;= 2<sup>31</sup> - 1</code></li>
+	<li><code>0 &lt;= amount &lt;= 10<sup>4</sup></code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> coinChange(self, coins: List[int], amount: int) -&gt; int:
+
+        costs = [float('inf')]*(amount+1)
+
+        costs[0] = 0
+
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(1,amount+1):
+            <span class="keyword">for</span> coin <span class="keyword">in</span> coins:
+                <span class="keyword">if</span> i - coin &gt;= 0:
+                    costs[i] = min(costs[i], costs[i-coin]+1)
+
+        <span class="keyword">return</span> costs[amount] <span class="keyword">if</span> costs[amount]!=float('inf') <span class="keyword">else</span> -1
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/koko-eating-bananas/description" target="_blank" style="color:'black'"><b>907 Koko Eating Bananas</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Koko loves to eat bananas. There are <code>n</code> piles of bananas, the <code>i<sup>th</sup></code> pile has <code>piles[i]</code> bananas. The guards have gone and will come back in <code>h</code> hours.</p>
+
+<p>Koko can decide her bananas-per-hour eating speed of <code>k</code>. Each hour, she chooses some pile of bananas and eats <code>k</code> bananas from that pile. If the pile has less than <code>k</code> bananas, she eats all of them instead and will not eat any more bananas during this hour.</p>
+
+<p>Koko likes to eat slowly but still wants to finish eating all the bananas before the guards return.</p>
+
+<p>Return <em>the minimum integer</em> <code>k</code> <em>such that she can eat all the bananas within</em> <code>h</code> <em>hours</em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> piles = [3,6,7,11], h = 8
+<strong>Output:</strong> 4
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> piles = [30,11,23,4,20], h = 5
+<strong>Output:</strong> 30
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> piles = [30,11,23,4,20], h = 6
+<strong>Output:</strong> 23
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= piles.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>piles.length &lt;= h &lt;= 10<sup>9</sup></code></li>
+	<li><code>1 &lt;= piles[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> minEatingSpeed(self, piles: List[int], h: int) -&gt; int:
+        h = h-len(piles)
+
+        <span class="keyword">def</span> isValid(i):
+            total_hours = 0
+            <span class="keyword">for</span> p <span class="keyword">in</span> piles:
+                hours = (p-1)//i
+<span class="comment">                # if not p%i:</span>
+<span class="comment">                    # hours = hours-1</span>
+                total_hours+= hours
+            <span class="keyword">return</span> total_hours - h
+
+<span class="comment">        # if negative eat less, if positive eat less</span>
+
+        left, right = 1, max(piles)
+        <span class="keyword">while</span> left &lt;= right:
+            curr = (left+right)//2
+            <span class="keyword">if</span> isValid(curr) &lt;= 0:
+                right = curr-1
+            <span class="keyword">else</span>:
+                left = curr+1
+        <span class="keyword">if</span> isValid(curr) &gt; 0:
+            <span class="keyword">return</span> curr+1
+        <span class="keyword">else</span>:
+            <span class="keyword">return</span> curr
+
+
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/unique-paths/description" target="_blank" style="color:'black'"><b>62 Unique Paths</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>There is a robot on an <code>m x n</code> grid. The robot is initially located at the <strong>top-left corner</strong> (i.e., <code>grid[0][0]</code>). The robot tries to move to the <strong>bottom-right corner</strong> (i.e., <code>grid[m - 1][n - 1]</code>). The robot can only move either down or right at any point in time.</p>
+
+<p>Given the two integers <code>m</code> and <code>n</code>, return <em>the number of possible unique paths that the robot can take to reach the bottom-right corner</em>.</p>
+
+<p>The test cases are generated so that the answer will be less than or equal to <code>2 * 10<sup>9</sup></code>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2018/10/22/robot_maze.png" style="width: 400px; height: 183px;">
+<pre><strong>Input:</strong> m = 3, n = 7
+<strong>Output:</strong> 28
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> m = 3, n = 2
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> From the top-left corner, there are a total of 3 ways to reach the bottom-right corner:
+1. Right -&gt; Down -&gt; Down
+2. Down -&gt; Down -&gt; Right
+3. Down -&gt; Right -&gt; Down
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= m, n &lt;= 100</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> uniquePaths(self, m: int, n: int) -&gt; int:
+        grid = [[0]*m <span class="keyword">for</span> _ <span class="keyword">in</span> range(n)]
+        <span class="keyword">for</span> ys <span class="keyword">in</span> grid:
+            ys[0] = 1
+
+        grid[0] = [1]*m
+
+        <span class="keyword">for</span> y <span class="keyword">in</span> range(1, m):
+            <span class="keyword">for</span> x <span class="keyword">in</span> range(1,n):
+                grid[x][y] = grid[x][y-1] + grid[x-1][y]
+
+        <span class="keyword">return</span> grid[n-1][m-1]
+
+
+
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/product-of-array-except-self/description" target="_blank" style="color:'black'"><b>238 Product of Array Except Self</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given an integer array <code>nums</code>, return <em>an array</em> <code>answer</code> <em>such that</em> <code>answer[i]</code> <em>is equal to the product of all the elements of</em> <code>nums</code> <em>except</em> <code>nums[i]</code>.</p>
+
+<p>The product of any prefix or suffix of <code>nums</code> is <strong>guaranteed</strong> to fit in a <strong>32-bit</strong> integer.</p>
+
+<p>You must write an algorithm that runs in&nbsp;<code>O(n)</code>&nbsp;time and without using the division operation.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,4]
+<strong>Output:</strong> [24,12,8,6]
+</pre><p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [-1,1,0,-3,3]
+<strong>Output:</strong> [0,0,9,0,0]
+</pre>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>2 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+	<li><code>-30 &lt;= nums[i] &lt;= 30</code></li>
+	<li>The input is generated such that <code>answer[i]</code> is <strong>guaranteed</strong> to fit in a <strong>32-bit</strong> integer.</li>
+</ul>
+
+<p>&nbsp;</p>
+<p><strong>Follow up:</strong>&nbsp;Can you solve the problem in <code>O(1)</code>&nbsp;extra&nbsp;space complexity? (The output array <strong>does not</strong> count as extra space for space complexity analysis.)</p>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> productExceptSelf(self, nums: List[int]) -&gt; List[int]:
+        num_zeros = 0
+        <span class="keyword">for</span> n <span class="keyword">in</span> nums:
+            <span class="keyword">if</span> not n:
+                num_zeros+=1
+
+        <span class="keyword">if</span> num_zeros &gt;=2:
+            <span class="keyword">return</span> [0]*len(nums)
+        
+        non_zero_prod = 1
+        <span class="keyword">for</span> n <span class="keyword">in</span> nums:
+            <span class="keyword">if</span> n:
+                non_zero_prod = n*non_zero_prod
+
+        <span class="keyword">if</span> num_zeros == 1:
+            <span class="keyword">return</span> [0 <span class="keyword">if</span> n <span class="keyword">else</span> non_zero_prod <span class="keyword">for</span> n <span class="keyword">in</span> nums]
+
+        <span class="keyword">else</span>:
+            <span class="keyword">return</span> [non_zero_prod//n <span class="keyword">for</span> n <span class="keyword">in</span> nums]
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/binary-search/description" target="_blank" style="color:'black'"><b>792 Binary Search</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given an array of integers <code>nums</code> which is sorted in ascending order, and an integer <code>target</code>, write a function to search <code>target</code> in <code>nums</code>. If <code>target</code> exists, then return its index. Otherwise, return <code>-1</code>.</p>
+
+<p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums = [-1,0,3,5,9,12], target = 9
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> 9 exists in nums and its index is 4
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums = [-1,0,3,5,9,12], target = 2
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> 2 does not exist in nums so return -1
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>-10<sup>4</sup> &lt; nums[i], target &lt; 10<sup>4</sup></code></li>
+	<li>All the integers in <code>nums</code> are <strong>unique</strong>.</li>
+	<li><code>nums</code> is sorted in ascending order.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> search(self, nums: List[int], target: int) -&gt; int:
+
+        size = len(nums)
+        min_ = 0
+        max_ = len(nums)
+        prev = -1
+        <span class="keyword">while</span> True:
+            curr = n = (min_ + max_)//2
+
+            <span class="keyword">if</span> curr == prev:
+                <span class="keyword">return</span> -1
+            
+            a = nums[n]
+            <span class="keyword">if</span> a == target:
+                <span class="keyword">return</span> n
+            <span class="keyword">else</span>:
+                <span class="keyword">if</span> a &gt; target:
+                    max_ = n
+                <span class="keyword">else</span>:
+                    min_ = n
+                
+                prev = n
+
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/max-area-of-island/description" target="_blank" style="color:'black'"><b>695 Max Area of Island</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are given an <code>m x n</code> binary matrix <code>grid</code>. An island is a group of <code>1</code>'s (representing land) connected <strong>4-directionally</strong> (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.</p>
+
+<p>The <strong>area</strong> of an island is the number of cells with a value <code>1</code> in the island.</p>
+
+<p>Return <em>the maximum <strong>area</strong> of an island in </em><code>grid</code>. If there is no island, return <code>0</code>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/01/maxarea1-grid.jpg" style="width: 500px; height: 310px;">
+<pre><strong>Input:</strong> grid = [[0,0,1,0,0,0,0,1,0,0,0,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,1,1,0,1,0,0,0,0,0,0,0,0],[0,1,0,0,1,1,0,0,1,0,1,0,0],[0,1,0,0,1,1,0,0,1,1,1,0,0],[0,0,0,0,0,0,0,0,0,0,1,0,0],[0,0,0,0,0,0,0,1,1,1,0,0,0],[0,0,0,0,0,0,0,1,1,0,0,0,0]]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> The answer is not 11, because the island must be connected 4-directionally.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> grid = [[0,0,0,0,0,0,0,0]]
+<strong>Output:</strong> 0
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>m == grid.length</code></li>
+	<li><code>n == grid[i].length</code></li>
+	<li><code>1 &lt;= m, n &lt;= 50</code></li>
+	<li><code>grid[i][j]</code> is either <code>0</code> or <code>1</code>.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> maxAreaOfIsland(self, grid: List[List[int]]) -&gt; int:
+        height = len(grid)
+        width = len(grid[0])
+        visited = set()
+
+        <span class="keyword">def</span> find_area(j, i):
+            <span class="keyword">if</span> j&lt;0 or j&gt;=height:
+                <span class="keyword">return</span> 0
+            <span class="keyword">if</span> i &lt; 0 or i&gt;=width:
+                <span class="keyword">return</span> 0
+            <span class="keyword">if</span> grid[j][i] == 0:
+                <span class="keyword">return</span> 0
+            grid[j][i] = 0 
+            <span class="keyword">return</span> 1 + find_area(j+1, i) +find_area(j-1, i)+find_area(j, i-1)+find_area(j, i+1)
+
+        max_area = 0
+        <span class="keyword">for</span> j <span class="keyword">in</span> range(0, height):
+            <span class="keyword">for</span> i <span class="keyword">in</span> range(0, width):
+                <span class="keyword">if</span> grid[j][i] != 0:
+                    max_area = max(max_area, find_area(j, i))
+
+        <span class="keyword">return</span> max_area
+
+                    
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/clone-graph/description" target="_blank" style="color:'black'"><b>133 Clone Graph</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given a reference of a node in a <strong><a href="https://en.wikipedia.org/wiki/Connectivity_(graph_theory)#Connected_graph" target="_blank">connected</a></strong> undirected graph.</p>
+
+<p>Return a <a href="https://en.wikipedia.org/wiki/Object_copying#Deep_copy" target="_blank"><strong>deep copy</strong></a> (clone) of the graph.</p>
+
+<p>Each node in the graph contains a value (<code>int</code>) and a list (<code>List[Node]</code>) of its neighbors.</p>
+
+<pre>class Node {
+    public int val;
+    public List&lt;Node&gt; neighbors;
+}
+</pre>
+
+<p>&nbsp;</p>
+
+<p><strong>Test case format:</strong></p>
+
+<p>For simplicity, each node's value is the same as the node's index (1-indexed). For example, the first node with <code>val == 1</code>, the second node with <code>val == 2</code>, and so on. The graph is represented in the test case using an adjacency list.</p>
+
+<p><b>An adjacency list</b> is a collection of unordered <b>lists</b> used to represent a finite graph. Each list describes the set of neighbors of a node in the graph.</p>
+
+<p>The given node will always be the first node with <code>val = 1</code>. You must return the <strong>copy of the given node</strong> as a reference to the cloned graph.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2019/11/04/133_clone_graph_question.png" style="width: 454px; height: 500px;">
+<pre><strong>Input:</strong> adjList = [[2,4],[1,3],[2,4],[1,3]]
+<strong>Output:</strong> [[2,4],[1,3],[2,4],[1,3]]
+<strong>Explanation:</strong> There are 4 nodes in the graph.
+1st node (val = 1)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+2nd node (val = 2)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+3rd node (val = 3)'s neighbors are 2nd node (val = 2) and 4th node (val = 4).
+4th node (val = 4)'s neighbors are 1st node (val = 1) and 3rd node (val = 3).
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/01/07/graph.png" style="width: 163px; height: 148px;">
+<pre><strong>Input:</strong> adjList = [[]]
+<strong>Output:</strong> [[]]
+<strong>Explanation:</strong> Note that the input contains one empty list. The graph consists of only one node with val = 1 and it does not have any neighbors.
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> adjList = []
+<strong>Output:</strong> []
+<strong>Explanation:</strong> This an empty graph, it does not have any nodes.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the graph is in the range <code>[0, 100]</code>.</li>
+	<li><code>1 &lt;= Node.val &lt;= 100</code></li>
+	<li><code>Node.val</code> is unique for each node.</li>
+	<li>There are no repeated edges and no self-loops in the graph.</li>
+	<li>The Graph is connected and all nodes can be visited starting from the given node.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code>"""
+<span class="comment"># Definition for a Node.</span>
+<span class="keyword">class</span> Node:
+    <span class="keyword">def</span> __init__(self, val = 0, neighbors = None):
+        self.val = val
+        self.neighbors = neighbors <span class="keyword">if</span> neighbors is not None <span class="keyword">else</span> []
+"""
+
+from typing import Optional
+from copy import deepcopy
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> cloneGraph(self, node: Optional['Node']) -&gt; Optional['Node']:
+        <span class="keyword">return</span> deepcopy(node)
+        
+
+        
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/description" target="_blank" style="color:'black'"><b>102 Binary Tree Level Order Traversal</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given the <code>root</code> of a binary tree, return <em>the level order traversal of its nodes' values</em>. (i.e., from left to right, level by level).</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/tree1.jpg" style="width: 277px; height: 302px;">
+<pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]
+<strong>Output:</strong> [[3],[9,20],[15,7]]
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> root = [1]
+<strong>Output:</strong> [[1]]
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> root = []
+<strong>Output:</strong> []
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[0, 2000]</code>.</li>
+	<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.left = left</span>
+<span class="comment">#         self.right = right</span>
+<span class="keyword">class</span> Solution:
+    o = []
+    x = 0
+    <span class="keyword">def</span> levelOrder(self, root: Optional[TreeNode]) -&gt; List[List[int]]:
+            o = []
+            <span class="keyword">def</span> f(root, x =-1 ):
+                <span class="keyword">if</span> not root:
+                    <span class="keyword">return</span>
+                x+=1
+                <span class="keyword">if</span> len(o) == x:
+                    o.append([])
+
+                o[x].append(root.val)
+
+                f(root.left, x)
+                f(root.right, x)
+            f(root)
+            <span class="keyword">return</span> o
+
+
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/recover-binary-search-tree/description" target="_blank" style="color:'black'"><b>99 Recover Binary Search Tree</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are given the <code>root</code> of a binary search tree (BST), where the values of <strong>exactly</strong> two nodes of the tree were swapped by mistake. <em>Recover the tree without changing its structure</em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/28/recover1.jpg" style="width: 422px; height: 302px;">
+<pre><strong>Input:</strong> root = [1,3,null,null,2]
+<strong>Output:</strong> [3,1,null,null,2]
+<strong>Explanation:</strong> 3 cannot be a left child of 1 because 3 &gt; 1. Swapping 1 and 3 makes the BST valid.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/28/recover2.jpg" style="width: 581px; height: 302px;">
+<pre><strong>Input:</strong> root = [3,1,4,null,null,2]
+<strong>Output:</strong> [2,1,4,null,null,3]
+<strong>Explanation:</strong> 2 cannot be in the right subtree of 3 because 2 &lt; 3. Swapping 2 and 3 makes the BST valid.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[2, 1000]</code>.</li>
+	<li><code>-2<sup>31</sup> &lt;= Node.val &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+
+<p>&nbsp;</p>
+<strong>Follow up:</strong> A solution using <code>O(n)</code> space is pretty straight-forward. Could you devise a constant <code>O(1)</code> space solution?
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.left = left</span>
+<span class="comment">#         self.right = right</span>
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> recoverTree(self, root: Optional[TreeNode]) -&gt; None:
+        """
+        Do not <span class="keyword">return</span> anything, modify root <span class="keyword">in</span>-place instead.
+        """
+        items = []
+        <span class="keyword">def</span> inorder(root):
+            <span class="keyword">if</span> root:
+                items.append(inorder(root.left))
+                items.append(root.val)
+                items.append(inorder(root.right))
+
+        inorder(root)
+        
+        items = [i <span class="keyword">for</span> i <span class="keyword">in</span> items <span class="keyword">if</span> i!=None]
+
+        items2 = sorted(items)
+        print(items, items2)
+        <span class="keyword">for</span> (x,y) <span class="keyword">in</span> zip(items, items2):
+            <span class="keyword">if</span> x!=y:
+                print(x,y)
+                break
+        
+        items = [x,y]
+        print(x,y)
+
+        mapper = {x:y, y:x}
+
+        wanted = []
+        <span class="keyword">def</span> f(tree):
+
+            <span class="keyword">if</span> not tree:
+                <span class="keyword">return</span>
+
+            <span class="keyword">if</span> tree.val <span class="keyword">in</span> items:
+                wanted.append(tree)
+            f(tree.left)
+            f(tree.right)
+        
+        f(root)
+        print(wanted)
+
+        <span class="keyword">for</span> tree <span class="keyword">in</span> wanted:
+            tree.val = mapper[tree.val]
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/symmetric-tree/description" target="_blank" style="color:'black'"><b>101 Symmetric Tree</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given the <code>root</code> of a binary tree, <em>check whether it is a mirror of itself</em> (i.e., symmetric around its center).</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg" style="width: 354px; height: 291px;">
+<pre><strong>Input:</strong> root = [1,2,2,3,4,4,3]
+<strong>Output:</strong> true
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg" style="width: 308px; height: 258px;">
+<pre><strong>Input:</strong> root = [1,2,2,null,3,null,3]
+<strong>Output:</strong> false
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[1, 1000]</code>.</li>
+	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+
+<p>&nbsp;</p>
+<strong>Follow up:</strong> Could you solve it both recursively and iteratively?
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.left = left</span>
+<span class="comment">#         self.right = right</span>
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> isSymmetric(self, root: Optional[TreeNode]) -&gt; bool:
+        <span class="keyword">def</span> helper(node1, node2):
+            <span class="keyword">if</span> not node1 and not node2:
+                <span class="keyword">return</span> True
+            
+            <span class="keyword">if</span> (node1 and not node2) or (node2 and not node1):
+                <span class="keyword">return</span> False
+
+            <span class="keyword">if</span> node1.val!=node2.val:
+                <span class="keyword">return</span> False
+            
+            <span class="keyword">return</span> helper(node1.right, node2.left) and helper(node1.left, node2.right)
+
+        <span class="keyword">return</span> helper(root.left,root.right )
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/same-tree/description" target="_blank" style="color:'black'"><b>100 Same Tree</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given the roots of two binary trees <code>p</code> and <code>q</code>, write a function to check if they are the same or not.</p>
+
+<p>Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/20/ex1.jpg" style="width: 622px; height: 182px;">
+<pre><strong>Input:</strong> p = [1,2,3], q = [1,2,3]
+<strong>Output:</strong> true
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/20/ex2.jpg" style="width: 382px; height: 182px;">
+<pre><strong>Input:</strong> p = [1,2], q = [1,null,2]
+<strong>Output:</strong> false
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/20/ex3.jpg" style="width: 622px; height: 182px;">
+<pre><strong>Input:</strong> p = [1,2,1], q = [1,1,2]
+<strong>Output:</strong> false
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in both trees is in the range <code>[0, 100]</code>.</li>
+	<li><code>-10<sup>4</sup> &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.left = left</span>
+<span class="comment">#         self.right = right</span>
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -&gt; bool:
+
+        <span class="keyword">def</span> helper(node1, node2):
+            <span class="keyword">if</span> not node1 and not node2:
+                <span class="keyword">return</span> True
+            
+            <span class="keyword">if</span> (node1 and not node2) or (node2 and not node1):
+                <span class="keyword">return</span> False
+
+            <span class="keyword">if</span> node1.val!=node2.val:
+                <span class="keyword">return</span> False
+            
+            <span class="keyword">return</span> helper(node1.right, node2.right) and helper(node1.left, node2.left)
+
+        <span class="keyword">return</span> helper(p,q )
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/validate-binary-search-tree/description" target="_blank" style="color:'black'"><b>98 Validate Binary Search Tree</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given the <code>root</code> of a binary tree, <em>determine if it is a valid binary search tree (BST)</em>.</p>
+
+<p>A <strong>valid BST</strong> is defined as follows:</p>
+
+<ul>
+	<li>The left <span data-keyword="subtree">subtree</span> of a node contains only nodes with keys&nbsp;<strong>strictly less than</strong> the node's key.</li>
+	<li>The right subtree of a node contains only nodes with keys <strong>strictly greater than</strong> the node's key.</li>
+	<li>Both the left and right subtrees must also be binary search trees.</li>
+</ul>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/01/tree1.jpg" style="width: 302px; height: 182px;">
+<pre><strong>Input:</strong> root = [2,1,3]
+<strong>Output:</strong> true
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/01/tree2.jpg" style="width: 422px; height: 292px;">
+<pre><strong>Input:</strong> root = [5,1,4,null,null,3,6]
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The root node's value is 5 but its right child's value is 4.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[1, 10<sup>4</sup>]</code>.</li>
+	<li><code>-2<sup>31</sup> &lt;= Node.val &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="comment"># class TreeNode:</span>
+<span class="comment">#     def __init__(self, val=0, left=None, right=None):</span>
+<span class="comment">#         self.val = val</span>
+<span class="comment">#         self.left = left</span>
+<span class="comment">#         self.right = right</span>
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> isValidBST(self, root: Optional[TreeNode]) -&gt; bool:
+        <span class="keyword">def</span> helper(root, lower=float('-inf'), upper=float('inf')):
+
+            <span class="keyword">if</span> not root:
+                <span class="keyword">return</span> True
+
+            <span class="keyword">if</span> not(upper&gt;root.val&gt;lower):
+                <span class="keyword">return</span> False
+
+            <span class="keyword">return</span> helper(root.left, lower, root.val) and helper(root.right, root.val, upper)
+
+        <span class="keyword">return</span> helper(root)
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/unique-binary-search-trees-ii/description" target="_blank" style="color:'black'"><b>95 Unique Binary Search Trees II</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given an integer <code>n</code>, return <em>all the structurally unique <strong>BST'</strong>s (binary search trees), which has exactly </em><code>n</code><em> nodes of unique values from</em> <code>1</code> <em>to</em> <code>n</code>. Return the answer in <strong>any order</strong>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/01/18/uniquebstn3.jpg" style="width: 600px; height: 148px;">
+<pre><strong>Input:</strong> n = 3
+<strong>Output:</strong> [[1,null,2,null,3],[1,null,3,2],[2,1,3],[3,1,null,null,2],[3,2,null,1]]
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> n = 1
+<strong>Output:</strong> [[1]]
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= n &lt;= 8</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="keyword">class</span> TreeNodeq:
+    <span class="keyword">def</span> __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+    <span class="keyword">def</span> __repr__(self):
+        <span class="keyword">return</span> f"TreeNode(val={self.val}, left={self.left}, right={self.right})"
+
+
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> generateTrees(self, n: int):
+        <span class="keyword">if</span> n == 0:
+            <span class="keyword">return</span> []
+
+        memo = {}
+
+        <span class="keyword">def</span> generate(start, end):
+            <span class="keyword">if</span> start &gt; end:
+                <span class="keyword">return</span> [None]
+            all_trees = []
+            <span class="keyword">for</span> i <span class="keyword">in</span> range(start, end + 1):
+                <span class="keyword">if</span> ((start, i-1)) <span class="keyword">in</span> memo:
+                    left_trees = memo[(start, i - 1)]
+                <span class="keyword">else</span>:
+                    left_trees = generate(start, i - 1)
+                    memo[(start, i - 1)] = left_trees
+                <span class="keyword">if</span> ((i + 1, end)) <span class="keyword">in</span> memo:
+                    right_trees = memo[(i + 1, end)]
+                <span class="keyword">else</span>:
+                    right_trees = generate(i + 1, end)
+                    memo[(i + 1, end)] = right_trees
+                <span class="keyword">for</span> left <span class="keyword">in</span> left_trees:
+                    <span class="keyword">for</span> right <span class="keyword">in</span> right_trees:
+                        root = TreeNode(i)
+                        root.left = left
+                        root.right = right
+                        all_trees.append(root)
+            <span class="keyword">return</span> all_trees
+
+        <span class="keyword">return</span> generate(1, n)
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/unique-binary-search-trees/description" target="_blank" style="color:'black'"><b>96 Unique Binary Search Trees</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given an integer <code>n</code>, return <em>the number of structurally unique <strong>BST'</strong>s (binary search trees) which has exactly </em><code>n</code><em> nodes of unique values from</em> <code>1</code> <em>to</em> <code>n</code>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/01/18/uniquebstn3.jpg" style="width: 600px; height: 148px;">
+<pre><strong>Input:</strong> n = 3
+<strong>Output:</strong> 5
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> n = 1
+<strong>Output:</strong> 1
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= n &lt;= 19</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> numTrees(self, n: int) -&gt; int:
+
+        values= {}
+
+        <span class="keyword">def</span> f(x):
+            <span class="keyword">if</span> x == 1:
+                <span class="keyword">return</span> 1
+            <span class="keyword">elif</span> x == 0:
+                <span class="keyword">return</span> 1
+            <span class="keyword">elif</span> x == 2:
+                <span class="keyword">return</span> 2
+            <span class="keyword">else</span>:
+                k = 0
+                <span class="keyword">for</span> i <span class="keyword">in</span> range(x):
+                    <span class="keyword">if</span> i <span class="keyword">in</span> values:
+                        a= values[i]
+                    <span class="keyword">else</span>:
+                        a = f(i)
+                        values[i] = a
+
+                    j = x-1-i
+                    <span class="keyword">if</span> j <span class="keyword">in</span> values:
+                        b = values[j]
+                    <span class="keyword">else</span>:
+                        b = f(j)
+                        values[j] = b
+                        
+                    k = k + a*b
+                <span class="keyword">return</span> k
+        <span class="keyword">return</span> f(n)
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/binary-tree-inorder-traversal/description" target="_blank" style="color:'black'"><b>94 Binary Tree Inorder Traversal</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given the <code>root</code> of a binary tree, return <em>the inorder traversal of its nodes' values</em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">root = [1,null,2,3]</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">[1,3,2]</span></p>
+
+<p><strong>Explanation:</strong></p>
+
+<p><img alt="" src="https://assets.leetcode.com/uploads/2024/08/29/screenshot-2024-08-29-202743.png" style="width: 200px; height: 264px;"></p>
+</div>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">root = [1,2,3,4,5,null,8,null,null,6,7,9]</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">[4,2,6,5,7,1,3,9,8]</span></p>
+
+<p><strong>Explanation:</strong></p>
+
+<p><img alt="" src="https://assets.leetcode.com/uploads/2024/08/29/tree_2.png" style="width: 350px; height: 286px;"></p>
+</div>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">root = []</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">[]</span></p>
+</div>
+
+<p><strong class="example">Example 4:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">root = [1]</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">[1]</span></p>
+</div>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li>The number of nodes in the tree is in the range <code>[0, 100]</code>.</li>
+	<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+
+<p>&nbsp;</p>
+<strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="comment"># Definition for a binary tree node.</span>
+<span class="keyword">class</span> TreeNode:
+    <span class="keyword">def</span> __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> inorderTraversal(self, root: Optional[TreeNode], index=0, output=[]) -&gt; List[int]:
+        what = []
+        <span class="keyword">def</span> f(root):
+            <span class="keyword">if</span> root:
+                f(root.left)
+                print(root.val)
+                what.append(root.val)
+                f(root.right)
+
+        f(root)
+
+        <span class="keyword">return</span> what
+
+
+
+
+        
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/palindrome-number/description" target="_blank" style="color:'black'"><b>9 Palindrome Number</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given an integer <code>x</code>, return <code>true</code><em> if </em><code>x</code><em> is a </em><span data-keyword="palindrome-integer"><em><strong>palindrome</strong></em></span><em>, and </em><code>false</code><em> otherwise</em>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> x = 121
+<strong>Output:</strong> true
+<strong>Explanation:</strong> 121 reads as 121 from left to right and from right to left.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> x = -121
+<strong>Output:</strong> false
+<strong>Explanation:</strong> From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> x = 10
+<strong>Output:</strong> false
+<strong>Explanation:</strong> Reads 01 from right to left. Therefore it is not a palindrome.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>-2<sup>31</sup>&nbsp;&lt;= x &lt;= 2<sup>31</sup>&nbsp;- 1</code></li>
+</ul>
+
+<p>&nbsp;</p>
+<strong>Follow up:</strong> Could you solve it without converting the integer to a string?
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> isPalindrome(self, x: int) -&gt; bool:
+        <span class="keyword">if</span> x &lt; 0:
+            <span class="keyword">return</span> False
+        x = str(x)
+        length = len(x)//2
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(length):
+            <span class="keyword">if</span> x[i]!=x[-i-1]:
+                <span class="keyword">return</span> False
+        
+        <span class="keyword">return</span> True
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/longest-palindromic-substring/description" target="_blank" style="color:'black'"><b>5 Longest Palindromic Substring</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given a string <code>s</code>, return <em>the longest</em> <span data-keyword="palindromic-string"><em>palindromic</em></span> <span data-keyword="substring-nonempty"><em>substring</em></span> in <code>s</code>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> s = "babad"
+<strong>Output:</strong> "bab"
+<strong>Explanation:</strong> "aba" is also a valid answer.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> s = "cbbd"
+<strong>Output:</strong> "bb"
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+	<li><code>s</code> consist of only digits and English letters.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> longestPalindrome(self, s: str) -&gt; str:
+        <span class="keyword">if</span> len(s) == 1:
+            <span class="keyword">return</span> s
+        max_length = 0
+        ii = 0
+<span class="comment">        # for i in [5]:</span>
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(0,len(s)-1):
+            <span class="keyword">if</span> (s[i] != s[i+1]) or (s[i]==s[i+1]==s[i-1]):
+                start = s[:i][::-1]
+                end = s[i+1:]
+                length = 0
+                <span class="keyword">for</span> x, y <span class="keyword">in</span> zip(end, start):
+                    <span class="keyword">if</span> x == y:
+                        length += 1
+                    <span class="keyword">else</span>:
+                        break
+                length = 2*length + 1
+                <span class="keyword">if</span> length &gt; max_length:
+                    max_length = length
+                    ii = i 
+
+            <span class="keyword">if</span> s[i] == s[i+1]:
+                start = s[:i+1][::-1]
+                end = s[i+1:]
+                length = 0
+                <span class="keyword">for</span> x, y <span class="keyword">in</span> zip(end, start):
+                    <span class="keyword">if</span> x == y:
+                        length += 1
+                    <span class="keyword">else</span>:
+                        break
+                length = 2*length
+                <span class="keyword">if</span> length &gt; max_length:
+                    max_length = length
+                    ii = i 
+        <span class="keyword">if</span> max_length % 2 == 0:
+            sub = max_length//2
+            <span class="keyword">return</span>  s[ii+1-sub:ii+1] + s[ii+1:ii+1+sub]
+        <span class="keyword">else</span>:
+            t = (max_length-1)//2
+            <span class="keyword">return</span> s[ii-t:ii] + s[ii] + s[ii+1:ii+t+1]
+        <span class="keyword">return</span> None
+            
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/trapping-rain-water/description" target="_blank" style="color:'black'"><b>42 Trapping Rain Water</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given <code>n</code> non-negative integers representing an elevation map where the width of each bar is <code>1</code>, compute how much water it can trap after raining.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2018/10/22/rainwatertrap.png" style="width: 412px; height: 161px;">
+<pre><strong>Input:</strong> height = [0,1,0,2,1,0,1,3,2,1,2,1]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> The above elevation map (black section) is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> height = [4,2,0,3,2,5]
+<strong>Output:</strong> 9
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>n == height.length</code></li>
+	<li><code>1 &lt;= n &lt;= 2 * 10<sup>4</sup></code></li>
+	<li><code>0 &lt;= height[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> trap(self, height: List[int]) -&gt; int:
+
+        
+        start_h = 0
+        left_heights = []
+        <span class="keyword">for</span> h <span class="keyword">in</span> height:
+            <span class="keyword">if</span> h &gt; start_h:
+                left_heights.append(h)
+                start_h = h
+            <span class="keyword">else</span>:
+                left_heights.append(start_h)
+        
+        start_h = 0
+        right_heights = []
+        <span class="keyword">for</span> h <span class="keyword">in</span> height[::-1]:
+            <span class="keyword">if</span> h &gt; start_h:
+                right_heights.append(h)
+                start_h = h
+            <span class="keyword">else</span>:
+                right_heights.append(start_h)
+
+        right_heights = right_heights[::-1]
+
+        water_amount = 0
+        <span class="keyword">for</span> h, h1, h2 <span class="keyword">in</span> zip(height, left_heights, right_heights):
+            min_h = min(h1, h2)
+            water_amount += (min_h - h)
+
+        <span class="keyword">return</span> water_amount
+
+
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/sudoku-solver/description" target="_blank" style="color:'black'"><b>37 Sudoku Solver</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Write a program to solve a Sudoku puzzle by filling the empty cells.</p>
+
+<p>A sudoku solution must satisfy <strong>all of the following rules</strong>:</p>
+
+<ol>
+	<li>Each of the digits <code>1-9</code> must occur exactly once in each row.</li>
+	<li>Each of the digits <code>1-9</code> must occur exactly once in each column.</li>
+	<li>Each of the digits <code>1-9</code> must occur exactly once in each of the 9 <code>3x3</code> sub-boxes of the grid.</li>
+</ol>
+
+<p>The <code>'.'</code> character indicates empty cells.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Sudoku-by-L2G-20050714.svg/250px-Sudoku-by-L2G-20050714.svg.png" style="height:250px; width:250px">
+<pre><strong>Input:</strong> board = [["5","3",".",".","7",".",".",".","."],["6",".",".","1","9","5",".",".","."],[".","9","8",".",".",".",".","6","."],["8",".",".",".","6",".",".",".","3"],["4",".",".","8",".","3",".",".","1"],["7",".",".",".","2",".",".",".","6"],[".","6",".",".",".",".","2","8","."],[".",".",".","4","1","9",".",".","5"],[".",".",".",".","8",".",".","7","9"]]
+<strong>Output:</strong> [["5","3","4","6","7","8","9","1","2"],["6","7","2","1","9","5","3","4","8"],["1","9","8","3","4","2","5","6","7"],["8","5","9","7","6","1","4","2","3"],["4","2","6","8","5","3","7","9","1"],["7","1","3","9","2","4","8","5","6"],["9","6","1","5","3","7","2","8","4"],["2","8","7","4","1","9","6","3","5"],["3","4","5","2","8","6","1","7","9"]]
+<strong>Explanation:</strong>&nbsp;The input board is shown above and the only valid solution is shown below:
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Sudoku-by-L2G-20050714_solution.svg/250px-Sudoku-by-L2G-20050714_solution.svg.png" style="height:250px; width:250px">
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>board.length == 9</code></li>
+	<li><code>board[i].length == 9</code></li>
+	<li><code>board[i][j]</code> is a digit or <code>'.'</code>.</li>
+	<li>It is <strong>guaranteed</strong> that the input board has only one solution.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code>from itertools import chain
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> solveSudoku(self, board: List[List[str]]) -&gt; None:
+        """
+        Do not <span class="keyword">return</span> anything, modify board <span class="keyword">in</span>-place instead.
+        """
+        rows = [set() <span class="keyword">for</span> i <span class="keyword">in</span> range(9)]
+        columns = [set() <span class="keyword">for</span> i <span class="keyword">in</span> range(9)]
+        boxes = [set() <span class="keyword">for</span> i  <span class="keyword">in</span> range(9)]
+
+        <span class="keyword">for</span> jj <span class="keyword">in</span> range(9):
+            <span class="keyword">for</span> ii <span class="keyword">in</span> range(9):
+                <span class="keyword">if</span> board[jj][ii] != '.':
+                    rows[jj].add(board[jj][ii])
+                    columns[ii].add(board[jj][ii])
+
+                    col_index = 3*(ii//3) + (jj//3)
+                    boxes[col_index].add(board[jj][ii])
+
+        <span class="keyword">def</span> is_valid(j,i, num):
+            <span class="keyword">if</span> num <span class="keyword">in</span> rows[j]:
+                <span class="keyword">return</span> False
+            
+            <span class="keyword">if</span> num <span class="keyword">in</span> columns[i]:
+                <span class="keyword">return</span> False
+
+            box_index = 3*(i//3) + (j//3)
+            <span class="keyword">if</span> num <span class="keyword">in</span> boxes[box_index]:
+                <span class="keyword">return</span> False
+
+            <span class="keyword">return</span> True
+
+        <span class="keyword">def</span> solve(board, start_y, start_x):
+            <span class="keyword">for</span> y <span class="keyword">in</span> chain(range(start_y, 9), range(0, start_y)):
+                <span class="keyword">for</span> x <span class="keyword">in</span> chain(range(start_x, 9), range(0, start_x)):
+                    <span class="keyword">if</span> board[y][x] == '.':
+                        <span class="keyword">for</span> num <span class="keyword">in</span> range(1,10):
+                            num = str(num)
+                            <span class="keyword">if</span> is_valid(y, x, num):
+                                board[y][x] = num
+                                rows[y].add(num)
+                                columns[x].add(num)
+                                boxes[3*(x//3)+(y//3)].add(num)
+                                start_x = x
+                                start_y = y
+                                <span class="keyword">if</span> solve(board, start_y, start_x):
+                                    <span class="keyword">return</span> True
+                                board[y][x] = '.'
+                                rows[y].remove(num)
+                                columns[x].remove(num)
+                                boxes[3*(x//3)+(y//3)].remove(num)
+                        <span class="keyword">return</span> False
+            <span class="keyword">return</span> True
+
+        start_x = 0
+        start_y = 0
+        solve(board,start_y, start_x )
+
+                        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/first-missing-positive/description" target="_blank" style="color:'black'"><b>41 First Missing Positive</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given an unsorted integer array <code>nums</code>. Return the <em>smallest positive integer</em> that is <em>not present</em> in <code>nums</code>.</p>
+
+<p>You must implement an algorithm that runs in <code>O(n)</code> time and uses <code>O(1)</code> auxiliary space.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums = [1,2,0]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The numbers in the range [1,2] are all in the array.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums = [3,4,-1,1]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 1 is in the array but 2 is missing.
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> nums = [7,8,9,11,12]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> The smallest positive integer 1 is missing.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+	<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> firstMissingPositive(self, nums: List[int]) -&gt; int:
+        minimum = sorted([x <span class="keyword">for</span> x <span class="keyword">in</span> nums <span class="keyword">if</span> x &gt;0])
+        <span class="keyword">if</span> len(minimum)==0:
+            <span class="keyword">return</span> 1
+        minima = min(minimum)
+        <span class="keyword">if</span> minima &gt; 1:
+            <span class="keyword">return</span> 1
+        last = minima - 1
+        <span class="keyword">for</span> x <span class="keyword">in</span> minimum:
+            <span class="keyword">if</span> x - last &gt; 1:
+                <span class="keyword">return</span> last+1
+            last = x
+        <span class="keyword">return</span> x+1
+        
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/description" target="_blank" style="color:'black'"><b>3 Longest Substring Without Repeating Characters</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given a string <code>s</code>, find the length of the <strong>longest</strong> <span data-keyword="substring-nonempty"><strong>substring</strong></span> without duplicate characters.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> s = "abcabcbb"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The answer is "abc", with the length of 3. Note that <code>"bca"</code> and <code>"cab"</code> are also correct answers.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> s = "bbbbb"
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> The answer is "b", with the length of 1.
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> s = "pwwkew"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The answer is "wke", with the length of 3.
+Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>0 &lt;= s.length &lt;= 5 * 10<sup>4</sup></code></li>
+	<li><code>s</code> consists of English letters, digits, symbols and spaces.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> lengthOfLongestSubstring(self, s: str) -&gt; int:
+        last = ''
+        max_len= 0
+        last_item = ''
+        <span class="keyword">for</span> x <span class="keyword">in</span> s:
+            <span class="keyword">if</span> x not <span class="keyword">in</span> last:
+                last += x
+                length = len(last)
+                max_len = max(length, max_len)
+            <span class="keyword">else</span>:
+                length = len(last)
+                max_len = max(length, max_len)
+                <span class="keyword">if</span> x != last_item:
+                    last = last.split(x)[-1] +x
+                <span class="keyword">else</span>:
+                    last = x
+            last_item = x
+        <span class="keyword">return</span> max_len
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/median-of-two-sorted-arrays/description" target="_blank" style="color:'black'"><b>4 Median of Two Sorted Arrays</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given two sorted arrays <code>nums1</code> and <code>nums2</code> of size <code>m</code> and <code>n</code> respectively, return <strong>the median</strong> of the two sorted arrays.</p>
+
+<p>The overall run time complexity should be <code>O(log (m+n))</code>.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> nums1 = [1,3], nums2 = [2]
+<strong>Output:</strong> 2.00000
+<strong>Explanation:</strong> merged array = [1,2,3] and median is 2.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> nums1 = [1,2], nums2 = [3,4]
+<strong>Output:</strong> 2.50000
+<strong>Explanation:</strong> merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>nums1.length == m</code></li>
+	<li><code>nums2.length == n</code></li>
+	<li><code>0 &lt;= m &lt;= 1000</code></li>
+	<li><code>0 &lt;= n &lt;= 1000</code></li>
+	<li><code>1 &lt;= m + n &lt;= 2000</code></li>
+	<li><code>-10<sup>6</sup> &lt;= nums1[i], nums2[i] &lt;= 10<sup>6</sup></code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -&gt; float:  
+        f = sorted([*nums1, *nums2])
+
+        length = len(f)
+
+        <span class="keyword">if</span> length%2 == 0:
+            med = f[length//2-1] + f[length//2]
+            <span class="keyword">return</span> med/2
+        <span class="keyword">else</span>:
+            <span class="keyword">return</span> f[length//2]
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/reverse-integer/description" target="_blank" style="color:'black'"><b>7 Reverse Integer</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given a signed 32-bit integer <code>x</code>, return <code>x</code><em> with its digits reversed</em>. If reversing <code>x</code> causes the value to go outside the signed 32-bit integer range <code>[-2<sup>31</sup>, 2<sup>31</sup> - 1]</code>, then return <code>0</code>.</p>
+
+<p><strong>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).</strong></p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> x = 123
+<strong>Output:</strong> 321
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> x = -123
+<strong>Output:</strong> -321
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> x = 120
+<strong>Output:</strong> 21
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>-2<sup>31</sup> &lt;= x &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> reverse(self, x: int) -&gt; int:
+        reversed = str(x)[::-1]
+        <span class="keyword">if</span> reversed[-1] == '-':
+            reversed = '-' + reversed[:-1]
+
+        reversed = str(int(reversed))
+        answer = int(reversed)
+        <span class="keyword">if</span> answer &gt; (pow(2, 31) -1) or answer &lt; -pow(2, 31):
+            answer = 0 
+        <span class="keyword">return</span> answer
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/zigzag-conversion/description" target="_blank" style="color:'black'"><b>6 Zigzag Conversion</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>The string <code>"PAYPALISHIRING"</code> is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)</p>
+
+<pre>P   A   H   N
+A P L S I I G
+Y   I   R
+</pre>
+
+<p>And then read line by line: <code>"PAHNAPLSIIGYIR"</code></p>
+
+<p>Write the code that will take a string and make this conversion given a number of rows:</p>
+
+<pre>string convert(string s, int numRows);
+</pre>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> s = "PAYPALISHIRING", numRows = 3
+<strong>Output:</strong> "PAHNAPLSIIGYIR"
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> s = "PAYPALISHIRING", numRows = 4
+<strong>Output:</strong> "PINALSIGYAHRPI"
+<strong>Explanation:</strong>
+P     I    N
+A   L S  I G
+Y A   H R
+P     I
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> s = "A", numRows = 1
+<strong>Output:</strong> "A"
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+	<li><code>s</code> consists of English letters (lower-case and upper-case), <code>','</code> and <code>'.'</code>.</li>
+	<li><code>1 &lt;= numRows &lt;= 1000</code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code>import copy
+<span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> convert(self, s: str, numRows: int) -&gt; str:
+        length = len(s)
+        height = numRows
+        box_width = 1 <span class="keyword">if</span> height <span class="keyword">in</span> [1,2] <span class="keyword">else</span> (1+height-2)
+        num_items = height + height - 2 <span class="keyword">if</span> height not <span class="keyword">in</span> [1] <span class="keyword">else</span> 1
+        num_boxes = length//num_items
+        width2 = box_width*num_boxes
+        remaining_width = length%num_items
+        <span class="keyword">if</span> not remaining_width:
+            width3 = width2
+        <span class="keyword">elif</span> remaining_width &lt;= height:
+<span class="comment">            # add 1</span>
+            width3 = width2+1
+        <span class="keyword">else</span>:
+            width3 = width2+1+(remaining_width-height)
+            
+        print(height,box_width, num_items, num_boxes,width2,  remaining_width, width3)
+            
+        matrix = [[0 <span class="keyword">for</span> _ <span class="keyword">in</span> range(height)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(width3)]
+        print(matrix)
+<span class="comment">#         matrix = copy.deepcopy([copy.deepcopy([0]*height)]*width3)</span>
+        start_row = 0
+        start_col = 0
+        <span class="keyword">for</span> index, i <span class="keyword">in</span> enumerate(s):
+            matrix[start_col][start_row] = i
+            <span class="keyword">if</span> height == 1:
+                start_col +=1
+            <span class="keyword">elif</span> not start_col % box_width and start_row!=height-1:
+                start_row += 1
+            <span class="keyword">else</span>:
+                start_row -= 1
+                start_col += 1
+        c = ''
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(height):
+            <span class="keyword">for</span> j <span class="keyword">in</span> range(width3):
+                item = matrix[j][i]
+                <span class="keyword">if</span> item:
+                    c+=item
+                    
+        <span class="keyword">return</span> c
+
+
+
+
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/restore-ip-addresses/description" target="_blank" style="color:'black'"><b>93 Restore IP Addresses</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>A <strong>valid IP address</strong> consists of exactly four integers separated by single dots. Each integer is between <code>0</code> and <code>255</code> (<strong>inclusive</strong>) and cannot have leading zeros.</p>
+
+<ul>
+	<li>For example, <code>"0.1.2.201"</code> and <code>"192.168.1.1"</code> are <strong>valid</strong> IP addresses, but <code>"0.011.255.245"</code>, <code>"192.168.1.312"</code> and <code>"192.168@1.1"</code> are <strong>invalid</strong> IP addresses.</li>
+</ul>
+
+<p>Given a string <code>s</code> containing only digits, return <em>all possible valid IP addresses that can be formed by inserting dots into </em><code>s</code>. You are <strong>not</strong> allowed to reorder or remove any digits in <code>s</code>. You may return the valid IP addresses in <strong>any</strong> order.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> s = "25525511135"
+<strong>Output:</strong> ["255.255.11.135","255.255.111.35"]
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> s = "0000"
+<strong>Output:</strong> ["0.0.0.0"]
+</pre>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<pre><strong>Input:</strong> s = "101023"
+<strong>Output:</strong> ["1.0.10.23","1.0.102.3","10.1.0.23","10.10.2.3","101.0.2.3"]
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 20</code></li>
+	<li><code>s</code> consists of digits only.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> restoreIpAddresses(self, s: str) -&gt; List[str]:
+        length = len(s)
+        sets = set()
+        <span class="keyword">for</span> i <span class="keyword">in</span> range(0,3):
+            <span class="keyword">for</span> j <span class="keyword">in</span> range(0,3):
+                <span class="keyword">for</span> k <span class="keyword">in</span> range(0,3):
+                    <span class="keyword">for</span> l <span class="keyword">in</span> range(0,3):
+                        <span class="keyword">if</span> (i + j + k + l) == length-4:
+                            sets.add((i+1,j+1,k+1,l+1))
+
+        valid_ips = []
+        <span class="keyword">for</span> (a, b, c, d) <span class="keyword">in</span> sets:
+            a1 = s[0:a]
+            <span class="keyword">if</span> not (int(a1) &lt;= 255 and a1==str(int(a1))):
+                continue
+            b1 = s[a:a+b]
+            <span class="keyword">if</span> not (int(b1) &lt;= 255 and b1==str(int(b1))):
+                continue
+            c1 = s[a+b:a+b+c]
+            <span class="keyword">if</span> not (int(c1) &lt;= 255 and c1==str(int(c1))):
+                continue
+            d1 = s[a+b+c:a+b+c+d]
+            <span class="keyword">if</span> not (int(d1) &lt;= 255 and d1==str(int(d1))):
+                continue
+            valid_ips.append(f"{a1}.{b1}.{c1}.{d1}")
+
+        <span class="keyword">return</span> valid_ips
+
+
+
+
+
+
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/container-with-most-water/description" target="_blank" style="color:'black'"><b>11 Container With Most Water</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>You are given an integer array <code>height</code> of length <code>n</code>. There are <code>n</code> vertical lines drawn such that the two endpoints of the <code>i<sup>th</sup></code> line are <code>(i, 0)</code> and <code>(i, height[i])</code>.</p>
+
+<p>Find two lines that together with the x-axis form a container, such that the container contains the most water.</p>
+
+<p>Return <em>the maximum amount of water a container can store</em>.</p>
+
+<p><strong>Notice</strong> that you may not slant the container.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg" style="width: 600px; height: 287px;">
+<pre><strong>Input:</strong> height = [1,8,6,2,5,4,8,3,7]
+<strong>Output:</strong> 49
+<strong>Explanation:</strong> The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> height = [1,1]
+<strong>Output:</strong> 1
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>n == height.length</code></li>
+	<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+	<li><code>0 &lt;= height[i] &lt;= 10<sup>4</sup></code></li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python3</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution:
+    <span class="keyword">def</span> maxArea(self, height: List[int]) -&gt; int:
+        left = 0
+        right = len(height) -1
+        max_area = 0
+        <span class="keyword">while</span> left &lt; right:
+            max_area = max(max_area, (right-left)*(min(height[right], height[left])))
+            <span class="keyword">if</span> height[right] &gt; height[left]:
+                left = left+1
+            <span class="keyword">else</span>:
+                right = right -1
+
+        <span class="keyword">return</span> max_area
+
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/valid-parentheses/description" target="_blank" style="color:'black'"><b>20 Valid Parentheses</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given a string <code>s</code> containing just the characters <code>'('</code>, <code>')'</code>, <code>'{'</code>, <code>'}'</code>, <code>'['</code> and <code>']'</code>, determine if the input string is valid.</p>
+
+<p>An input string is valid if:</p>
+
+<ol>
+	<li>Open brackets must be closed by the same type of brackets.</li>
+	<li>Open brackets must be closed in the correct order.</li>
+	<li>Every close bracket has a corresponding open bracket of the same type.</li>
+</ol>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = "()"</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">true</span></p>
+</div>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = "()[]{}"</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">true</span></p>
+</div>
+
+<p><strong class="example">Example 3:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = "(]"</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">false</span></p>
+</div>
+
+<p><strong class="example">Example 4:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = "([])"</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">true</span></p>
+</div>
+
+<p><strong class="example">Example 5:</strong></p>
+
+<div class="example-block">
+<p><strong>Input:</strong> <span class="example-io">s = "([)]"</span></p>
+
+<p><strong>Output:</strong> <span class="example-io">false</span></p>
+</div>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>s</code> consists of parentheses only <code>'()[]{}'</code>.</li>
+</ul>
+
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution(object):
+    <span class="keyword">def</span> isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        
+        <span class="keyword">while</span> True:
+            old_len = len(s)
+            s_new = s.replace('()', '').replace('{}', '').replace('[]', '')
+            new_len = len(s_new)
+            <span class="keyword">if</span> new_len != old_len:
+                s = s_new
+            <span class="keyword">elif</span> not s_new:
+                <span class="keyword">return</span> True
+            <span class="keyword">else</span>:
+                <span class="keyword">return</span> False
+        
+</code></pre>
+                </div>
+            </div>
+        
+            <div class="question">
+                <div class="title">
+                    <a href="https://leetcode.com/problems/triangle/description" target="_blank" style="color:'black'"><b>120 Triangle</b> (link)</a>
+                </div>
+                <div class="description">
+                    <h2>Description</h2>
+                    <p>Given a <code>triangle</code> array, return <em>the minimum path sum from top to bottom</em>.</p>
+
+<p>For each step, you may move to an adjacent number of the row below. More formally, if you are on index <code>i</code> on the current row, you may move to either index <code>i</code> or index <code>i + 1</code> on the next row.</p>
+
+<p>&nbsp;</p>
+<p><strong class="example">Example 1:</strong></p>
+
+<pre><strong>Input:</strong> triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
+<strong>Output:</strong> 11
+<strong>Explanation:</strong> The triangle looks like:
+   <u>2</u>
+  <u>3</u> 4
+ 6 <u>5</u> 7
+4 <u>1</u> 8 3
+The minimum path sum from top to bottom is 2 + 3 + 5 + 1 = 11 (underlined above).
+</pre>
+
+<p><strong class="example">Example 2:</strong></p>
+
+<pre><strong>Input:</strong> triangle = [[-10]]
+<strong>Output:</strong> -10
+</pre>
+
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
+
+<ul>
+	<li><code>1 &lt;= triangle.length &lt;= 200</code></li>
+	<li><code>triangle[0].length == 1</code></li>
+	<li><code>triangle[i].length == triangle[i - 1].length + 1</code></li>
+	<li><code>-10<sup>4</sup> &lt;= triangle[i][j] &lt;= 10<sup>4</sup></code></li>
+</ul>
+
+<p>&nbsp;</p>
+<strong>Follow up:</strong> Could you&nbsp;do this using only <code>O(n)</code> extra space, where <code>n</code> is the total number of rows in the triangle?
+                </div>
+                <div style="font-size:12px;">(scroll down for solution)</div>
+                <br>
+                <div class="solution" style="page-break-before: always;  page-break-after: always;">
+                    <h2>Solution</h2>
+                     <div class="language">Language: python</div>
+                    <div class="solution-status">Status: Accepted</div>
+                    <pre><code><span class="keyword">class</span> Solution(object):
+    <span class="keyword">def</span> minimumTotal(self, triangle):
+        """
+        :type triangle: List[List[int]]
+        :rtype: int
+        """
+        height = len(triangle)
+        width = len(triangle[-1])
+
+        <span class="keyword">for</span> h <span class="keyword">in</span> range(1, height):
+            triangle[h][0] = triangle[h-1][0] + triangle[h][0]
+            triangle[h][-1] = triangle[h-1][-1] + triangle[h][-1]
+            
+        <span class="keyword">for</span> h <span class="keyword">in</span> range(2, height):
+            <span class="keyword">for</span> w <span class="keyword">in</span> range(1, h):
+                triangle[h][w] = triangle[h][w] + min(triangle[h-1][w-1], triangle[h-1][w])
+                
+        <span class="keyword">return</span> min(triangle[-1])
+</code></pre>
+                </div>
+            </div>
+        
+        
+        
+    </body></html>
