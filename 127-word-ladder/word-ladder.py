@@ -42,5 +42,4 @@ class Solution:
                 break
         return start+2
 
-__import__("atexit").register(lambda: open("display_runtime.txt", "w").write("0"))
         
