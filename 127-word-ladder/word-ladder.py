@@ -1,0 +1,51 @@
+import copy
+import sys
+class Solution:
+    def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:    
+        if endWord not in wordList:
+            return 0
+        maps = {}
+        for word in [beginWord, *wordList]:
+            for i in range(len(word)):
+                f_word = word[:i] + ' ' + word[i+1:]
+                print(word, f_word)
+                if f_word not in maps:
+                    maps[f_word] = set()
+                maps[f_word].add(word)
+
+        maps = {k: v for (k,v) in maps.items() if len(v)>1}
+        print('maps', maps)
+        if not maps:
+            return 0
+        new_maps = {}
+        for (k, v) in copy.deepcopy(maps).items():
+            for word in v:
+                if word not in new_maps:
+                    new_maps[word] = []
+                new_maps[word].append(v)
+
+        if endWord not in new_maps:
+            return 0
+
+        print('new maps', new_maps)
+        start = 0
+        words = set([beginWord])
+        while True:
+            print(words)
+            new_list = set()
+            for w in words:
+                lists = new_maps[w]
+                for l in lists:
+                    new_list.update(set(l))
+
+            print(new_list)
+            if endWord not in new_list:
+                start+=1
+                words = new_list
+                if start > len(wordList):
+                    return 0
+            else:
+                break
+        return start+2
+
+        
