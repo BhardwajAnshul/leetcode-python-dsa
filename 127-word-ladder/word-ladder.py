@@ -8,21 +8,20 @@ class Solution:
         for word in [beginWord, *wordList]:
             for i in range(len(word)):
                 f_word = word[:i] + ' ' + word[i+1:]
-                print(word, f_word)
                 if f_word not in maps:
                     maps[f_word] = set()
                 maps[f_word].add(word)
 
         maps = {k: v for (k,v) in maps.items() if len(v)>1}
-        print('maps', maps)
         if not maps:
             return 0
         new_maps = {}
-        for (k, v) in copy.deepcopy(maps).items():
+        for (k, v) in maps.items():
             for word in v:
                 if word not in new_maps:
                     new_maps[word] = []
-                new_maps[word].append(v)
+                if word!=k:
+                    new_maps[word].append(v)
 
         if endWord not in new_maps:
             return 0
