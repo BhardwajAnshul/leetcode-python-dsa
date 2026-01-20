@@ -1,5 +1,3 @@
-import copy
-import sys
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:    
         if endWord not in wordList:
@@ -37,7 +35,7 @@ class Solution:
 
             if endWord not in new_list:
                 start+=1
-                words = new_list
+                words = new_list - words
                 if start > len(wordList):
                     return 0
             else:
