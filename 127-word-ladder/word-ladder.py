@@ -27,18 +27,15 @@ class Solution:
         if endWord not in new_maps:
             return 0
 
-        print('new maps', new_maps)
         start = 0
         words = set([beginWord])
         while True:
-            print(words)
             new_list = set()
             for w in words:
                 lists = new_maps[w]
                 for l in lists:
                     new_list.update(set(l))
 
-            print(new_list)
             if endWord not in new_list:
                 start+=1
                 words = new_list
