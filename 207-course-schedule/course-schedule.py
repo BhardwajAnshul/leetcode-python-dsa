@@ -6,8 +6,6 @@ class Solution:
         for (course, req) in prerequisites:
             courses[course].append(req)
 
-        # courses = dict(courses)
-
         visited = []
         rec_stack = []
         def dfs(node):
@@ -26,9 +24,7 @@ class Solution:
 
         for node in range(numCourses):
             if node not in visited:
-                k = dfs(node)
-                print(node, k)
-                if k:
+                if dfs(node):
                     return False
 
         return True
