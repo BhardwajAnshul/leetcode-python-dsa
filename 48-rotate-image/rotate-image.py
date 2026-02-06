@@ -13,7 +13,7 @@ class Solution:
 
         for j in range(size):
             for i in range(size):
-                if i < size//2:
+                if i <= size//2 - 1:
                     matrix[j][i], matrix[j][size-1-i] = matrix[j][size-1-i], matrix[j][i]
 
 
