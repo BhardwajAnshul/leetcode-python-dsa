@@ -18,7 +18,8 @@ class Solution:
         
         for j in range(y):
             if j in zero_rows:
-                matrix[j] = [0]*x
+                for i in range(x):
+                    matrix[j][i] = 0
             for i in range(x):
                 if i in zero_cols:
                     matrix[j][i] = 0
