@@ -5,8 +5,8 @@ class Solution:
         done = set()
         for j in range(size):
             for i in range(j+1, size):
-                if f"{i}-{j}" in done:
-                    continue
+                # if f"{i}-{j}" in done:
+                #     continue
                 matrix[j][i], matrix[i][j] = matrix[i][j], matrix[j][i]
                 done.add(f"{i}-{j}")
                 done.add(f"{j}-{i}")
