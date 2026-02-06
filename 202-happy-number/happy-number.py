@@ -7,12 +7,11 @@ class Solution:
 
         seen = set()
         def happy(n):
-            print(n)
             if n in seen:
                 return False
             else:
                 seen.add(n)
-                
+
             if n ==2:
                 return False
             elif n ==1:
