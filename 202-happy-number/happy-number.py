@@ -7,13 +7,11 @@ class Solution:
 
         seen = set()
         def happy(n):
-            if n in seen:
-                return False
-            else:
-                seen.add(n)
-                
             if n ==1:
                 return True
+            elif n in seen:
+                return False
+            seen.add(n)
             return happy(sumofsquares(n))
 
         return happy(n)
