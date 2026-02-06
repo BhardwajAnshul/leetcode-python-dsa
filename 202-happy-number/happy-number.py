@@ -11,10 +11,8 @@ class Solution:
                 return False
             else:
                 seen.add(n)
-
-            if n ==2:
-                return False
-            elif n ==1:
+                
+            if n ==1:
                 return True
             return happy(sumofsquares(n))
 
